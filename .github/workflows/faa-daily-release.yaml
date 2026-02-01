@@ -52,8 +52,8 @@ jobs:
             Automated daily snapshot generated at 06:00 UTC for ${{ steps.meta.outputs.date }}.
 
             Assets:
-            - ReleasableAircraft.csv
-            - ReleasableAircraft.zip
+            - ReleasableAircraft_${{ steps.meta.outputs.date }}.csv
+            - ReleasableAircraft_${{ steps.meta.outputs.date }}.zip
           files: |
             data/faa_releasable/ReleasableAircraft_${{ steps.meta.outputs.date }}.csv
             data/faa_releasable/ReleasableAircraft_${{ steps.meta.outputs.date }}.zip
