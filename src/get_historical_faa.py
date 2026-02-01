@@ -29,8 +29,8 @@ log = run_git_text(
     "log",
     "--reverse",
     "--format=%H %cs",
-    "--since=2024-01-25",
-    "--until=2024-02-05",
+    "--since=2024-01-01",
+    "--until=2024-08-08",
 )
 lines = [ln for ln in log.splitlines() if ln.strip()]
 if not lines:
@@ -89,20 +89,35 @@ for date, sha in date_to_sha.items():
     df_new = convert_faa_master_txt_to_csv(zip_path, out_csv, date)
     if df_base.empty:
         df_base = df_new
-        print(df_base["unique_regulatory_id"].size, "total unique_regulatory_id entries so far")
+        print(len(df_base), "total entries so far")
         # Delete all files in the day directory
         for p in day_dir.iterdir():
             p.unlink()
         day_dir.rmdir()
         continue
-    key = "unique_regulatory_id"
-    df_to_add = df_new[~df_new[key].isin(df_base[key])]
-    df_base = pd.concat([df_base, df_to_add], ignore_index=True)
-    print(df_base[key].size, "total unique_regulatory_id entries so far")
-
-    # Delete all files in the day directory
-    for p in day_dir.iterdir():
-        p.unlink()
-    day_dir.rmdir()
+    
+    # Concatenate and deduplicate based on content fingerprint
+    df_base = pd.concat([df_base, df_new], ignore_index=True)
+    
+    CONTENT_COLS = [
+        c for c in df_base.columns
+        if c not in {"download_date"}
+    ]
+    
+    df_base["row_fingerprint"] = (
+        df_base[CONTENT_COLS]
+        .fillna("")
+        .astype(str)
+        .apply(lambda row: "|".join(row), axis=1)
+    )
+    
+    df_base = df_base.drop_duplicates(
+              subset=["row_fingerprint"],
+              keep="first"
+          ).drop(columns=["row_fingerprint"])
+    
+    
+    print(len(df_base), "total entries so far")
 
 df_base.to_csv(OUT_ROOT / f"MASTER_{start_date}_{end_date}.csv", index=False)
+# TODO: get average number of new rows per day.
