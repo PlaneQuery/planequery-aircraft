@@ -3,11 +3,15 @@ import zipfile
 import pandas as pd
 from faa_aircraft_registry import read
 
-def convert_faa_master_txt_to_csv(zip_path: Path, csv_path: Path) -> None:
+def convert_faa_master_txt_to_csv(zip_path: Path, csv_path: Path, date: str = None):
     with zipfile.ZipFile(zip_path) as z:
         registrations = read(z)
 
     df = pd.DataFrame(registrations['master'].values())
+    
+    if date is not None:
+        df.insert(0, "download_date", date)
+    
     col = "transponder_code_hex"
     df = df[[col] + [c for c in df.columns if c != col]]
     df = df.rename(columns={"transponder_code_hex": "icao"})
@@ -21,3 +25,4 @@ def convert_faa_master_txt_to_csv(zip_path: Path, csv_path: Path) -> None:
     df = df.drop(columns="engine").join(engine)
     df = df.sort_values(by=["icao"])
     df.to_csv(csv_path, index=False)
+    return df

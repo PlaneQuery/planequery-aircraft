@@ -12,6 +12,7 @@ from pathlib import Path
 from collections import OrderedDict
 from derive_from_faa_master_txt import convert_faa_master_txt_to_csv
 import zipfile
+import pandas as pd
 
 REPO = "/Users/jonahgoode/Documents/PlaneQuery/Other-Code/scrape-faa-releasable-aircraft"
 OUT_ROOT = Path("data/faa_releasable_historical")
@@ -28,8 +29,8 @@ log = run_git_text(
     "log",
     "--reverse",
     "--format=%H %cs",
-    "--since=2024-02-01",
-    "--until=2024-02-29",
+    "--since=2024-01-25",
+    "--until=2024-02-05",
 )
 lines = [ln for ln in log.splitlines() if ln.strip()]
 if not lines:
@@ -43,8 +44,13 @@ for ln in lines:
 
 OTHER_FILES = ["ACFTREF.txt", "DEALER.txt", "DOCINDEX.txt", "ENGINE.txt", "RESERVED.txt"]
 master_re = re.compile(r"^MASTER-(\d+)\.txt$")
-
+df_base = pd.DataFrame()
+start_date = None
+end_date = None
 for date, sha in date_to_sha.items():
+    if start_date is None:
+        start_date = date
+    end_date = date
     day_dir = OUT_ROOT / date
     day_dir.mkdir(parents=True, exist_ok=True)
 
@@ -77,11 +83,26 @@ for date, sha in date_to_sha.items():
         for p in day_dir.iterdir():
             z.write(p, arcname=p.name)
 
+    print(f"{date} {sha[:7]} -> {day_dir} (master parts: {len(parts)})")
     # 4) Convert ZIP -> CSV
     out_csv = day_dir / f"ReleasableAircraft_{date}.csv"
-    convert_faa_master_txt_to_csv(zip_path, out_csv)
+    df_new = convert_faa_master_txt_to_csv(zip_path, out_csv, date)
+    if df_base.empty:
+        df_base = df_new
+        print(df_base["unique_regulatory_id"].size, "total unique_regulatory_id entries so far")
+        # Delete all files in the day directory
+        for p in day_dir.iterdir():
+            p.unlink()
+        day_dir.rmdir()
+        continue
+    key = "unique_regulatory_id"
+    df_to_add = df_new[~df_new[key].isin(df_base[key])]
+    df_base = pd.concat([df_base, df_to_add], ignore_index=True)
+    print(df_base[key].size, "total unique_regulatory_id entries so far")
 
+    # Delete all files in the day directory
+    for p in day_dir.iterdir():
+        p.unlink()
+    day_dir.rmdir()
 
-    print(f"{date} {sha[:7]} -> {day_dir} (master parts: {len(parts)})")
-
-print(f"\nDone. Output root: {OUT_ROOT.resolve()}")
+df_base.to_csv(OUT_ROOT / f"MASTER_{start_date}_{end_date}.csv", index=False)
