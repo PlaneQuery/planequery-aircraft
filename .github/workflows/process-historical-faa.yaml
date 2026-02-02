@@ -22,9 +22,9 @@ jobs:
           ranges = []
           current = start
           
-          # Process in 1-day chunks (daily)
+          # Process in 4-day chunks
           while current < end:
-            chunk_end = current + timedelta(days=1)
+            chunk_end = current + timedelta(days=4)
             # Don't go past the end date
             if chunk_end > end:
               chunk_end = end
@@ -60,7 +60,7 @@ jobs:
     needs: [generate-matrix, clone-faa-repo]
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 256  # GitHub Actions maximum
+      max-parallel: 5  # Process 5 chunks at a time
       matrix:
         range: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
     steps:
