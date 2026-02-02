@@ -17,8 +17,8 @@ import argparse
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description="Process historical FAA data from git commits")
-parser.add_argument("--since", required=True, help="Start date (YYYY-MM-DD)")
-parser.add_argument("--until", required=True, help="End date (YYYY-MM-DD)")
+parser.add_argument("since", help="Start date (YYYY-MM-DD)")
+parser.add_argument("until", help="End date (YYYY-MM-DD)")
 args = parser.parse_args()
 
 # Clone repository if it doesn't exist
