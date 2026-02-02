@@ -9,8 +9,9 @@ Assumes the non-master files are present in every commit.
 """
 import subprocess, re
 from pathlib import Path
+import shutil
 from collections import OrderedDict
-from derive_from_faa_master_txt import convert_faa_master_txt_to_csv
+from derive_from_faa_master_txt import convert_faa_master_txt_to_csv, concat_faa_historical_df
 import zipfile
 import pandas as pd
 import argparse
@@ -110,33 +111,13 @@ for date, sha in date_to_sha.items():
         df_base = df_new
         print(len(df_base), "total entries so far")
         # Delete all files in the day directory
-        for p in day_dir.iterdir():
-            p.unlink()
-        day_dir.rmdir()
+        shutil.rmtree(day_dir)
         continue
     
-    # Concatenate and deduplicate based on content fingerprint
-    df_base = pd.concat([df_base, df_new], ignore_index=True)
-    
-    CONTENT_COLS = [
-        c for c in df_base.columns
-        if c not in {"download_date"}
-    ]
-    
-    df_base["row_fingerprint"] = (
-        df_base[CONTENT_COLS]
-        .fillna("")
-        .astype(str)
-        .apply(lambda row: "|".join(row), axis=1)
-    )
-    
-    df_base = df_base.drop_duplicates(
-              subset=["row_fingerprint"],
-              keep="first"
-          ).drop(columns=["row_fingerprint"])
-    
-    
+    df_base = concat_faa_historical_df(df_base, df_new)
+    shutil.rmtree(day_dir)
     print(len(df_base), "total entries so far")
 
+assert df_base['download_date'].is_monotonic_increasing, "download_date is not monotonic increasing"
 df_base.to_csv(OUT_ROOT / f"MASTER_{start_date}_{end_date}.csv", index=False)
 # TODO: get average number of new rows per day.

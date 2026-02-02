@@ -63,3 +63,25 @@ def normalize(s: pd.Series) -> pd.Series:
          .str.replace(r"[^\w\-]", "", regex=True)
     )
 
+
+def concat_faa_historical_df(df_base, df_new):
+
+    df_base = pd.concat([df_base, df_new], ignore_index=True)
+    
+    CONTENT_COLS = [
+        c for c in df_base.columns
+        if c not in {"download_date"}
+    ]
+    
+    df_base["row_fingerprint"] = (
+        df_base[CONTENT_COLS]
+        .fillna("")
+        .astype(str)
+        .apply(lambda row: "|".join(row), axis=1)
+    )
+    
+    df_base = df_base.drop_duplicates(
+              subset=["row_fingerprint"],
+              keep="first"
+          ).drop(columns=["row_fingerprint"])
+    return df_base
