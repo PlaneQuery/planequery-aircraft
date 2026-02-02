@@ -11,7 +11,7 @@ import subprocess, re
 from pathlib import Path
 import shutil
 from collections import OrderedDict
-from derive_from_faa_master_txt import convert_faa_master_txt_to_csv, concat_faa_historical_df
+from derive_from_faa_master_txt import convert_faa_master_txt_to_df, concat_faa_historical_df
 import zipfile
 import pandas as pd
 import argparse
@@ -106,7 +106,7 @@ for date, sha in date_to_sha.items():
     print(f"{date} {sha[:7]} -> {day_dir} (master parts: {len(parts)})")
     # 4) Convert ZIP -> CSV
     out_csv = day_dir / f"ReleasableAircraft_{date}.csv"
-    df_new = convert_faa_master_txt_to_csv(zip_path, out_csv, date)
+    df_new = convert_faa_master_txt_to_df(zip_path, out_csv, date)
     if df_base.empty:
         df_base = df_new
         print(len(df_base), "total entries so far")
@@ -119,5 +119,5 @@ for date, sha in date_to_sha.items():
     print(len(df_base), "total entries so far")
 
 assert df_base['download_date'].is_monotonic_increasing, "download_date is not monotonic increasing"
-df_base.to_csv(OUT_ROOT / f"MASTER_{start_date}_{end_date}.csv", index=False)
+df_base.to_csv(OUT_ROOT / f"planequery_aircraft_{start_date}_{end_date}.csv", index=False)
 # TODO: get average number of new rows per day.

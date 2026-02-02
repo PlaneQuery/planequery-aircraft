@@ -3,14 +3,13 @@ import zipfile
 import pandas as pd
 from faa_aircraft_registry import read
 
-def convert_faa_master_txt_to_csv(zip_path: Path, csv_path: Path, date: str = None):
+def convert_faa_master_txt_to_df(zip_path: Path, date: str):
     with zipfile.ZipFile(zip_path) as z:
         registrations = read(z)
 
     df = pd.DataFrame(registrations['master'].values())
     
-    if date is not None:
-        df.insert(0, "download_date", date)
+    df.insert(0, "download_date", date)
     
     registrant = pd.json_normalize(df["registrant"]).add_prefix("registrant_")
     df = df.drop(columns="registrant").join(registrant)
@@ -45,8 +44,6 @@ def convert_faa_master_txt_to_csv(zip_path: Path, csv_path: Path, date: str = No
     reg_idx = cols.index("registration_number")
     cols.insert(reg_idx + 1, "planequery_airframe_id")
     df = df[cols]
-    
-    df.to_csv(csv_path, index=False)
     return df
 
 
