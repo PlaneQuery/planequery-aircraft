@@ -15,6 +15,7 @@ from derive_from_faa_master_txt import convert_faa_master_txt_to_df, concat_faa_
 import zipfile
 import pandas as pd
 import argparse
+from datetime import datetime, timedelta
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description="Process historical FAA data from git commits")
@@ -33,12 +34,16 @@ def run_git_text(*args: str) -> str:
 def run_git_bytes(*args: str) -> bytes:
     return subprocess.check_output(["git", "-C", str(REPO), *args])
 
+# Parse dates and adjust --since to the day before
+since_date = datetime.strptime(args.since, "%Y-%m-%d")
+adjusted_since = (since_date - timedelta(days=1)).strftime("%Y-%m-%d")
+
 # All commits in specified date range (oldest -> newest)
 log = run_git_text(
     "log",
     "--reverse",
     "--format=%H %cs",
-    f"--since={args.since}",
+    f"--since={adjusted_since}",
     f"--until={args.until}",
 )
 lines = [ln for ln in log.splitlines() if ln.strip()]
