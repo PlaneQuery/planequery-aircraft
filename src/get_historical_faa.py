@@ -13,6 +13,13 @@ from collections import OrderedDict
 from derive_from_faa_master_txt import convert_faa_master_txt_to_csv
 import zipfile
 import pandas as pd
+import argparse
+
+# Parse command line arguments
+parser = argparse.ArgumentParser(description="Process historical FAA data from git commits")
+parser.add_argument("--since", required=True, help="Start date (YYYY-MM-DD)")
+parser.add_argument("--until", required=True, help="End date (YYYY-MM-DD)")
+args = parser.parse_args()
 
 # Clone repository if it doesn't exist
 REPO = Path("data/scrape-faa-releasable-aircraft")
@@ -36,17 +43,17 @@ def run_git_text(*args: str) -> str:
 def run_git_bytes(*args: str) -> bytes:
     return subprocess.check_output(["git", "-C", str(REPO), *args])
 
-# All commits in Feb 2024 (oldest -> newest)
+# All commits in specified date range (oldest -> newest)
 log = run_git_text(
     "log",
     "--reverse",
     "--format=%H %cs",
-    "--since=2024-06-01",
-    "--until=2024-06-08",
+    f"--since={args.since}",
+    f"--until={args.until}",
 )
 lines = [ln for ln in log.splitlines() if ln.strip()]
 if not lines:
-    raise SystemExit("No commits found in February 2024.")
+    raise SystemExit(f"No commits found between {args.since} and {args.until}.")
 
 # date -> last SHA that day
 date_to_sha = OrderedDict()
