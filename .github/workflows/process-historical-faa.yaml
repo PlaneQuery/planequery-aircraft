@@ -22,24 +22,19 @@ jobs:
           ranges = []
           current = start
           
+          # Process in 7-day chunks (weekly)
           while current < end:
-            # Start of current month
-            month_start = current
-            # Calculate next month (handle year rollover)
-            if current.month == 12:
-              month_end = datetime(current.year + 1, 1, 1)
-            else:
-              month_end = datetime(current.year, current.month + 1, 1)
+            chunk_end = current + timedelta(days=7)
             # Don't go past the end date
-            if month_end > end:
-              month_end = end
+            if chunk_end > end:
+              chunk_end = end
             
             ranges.append({
-              "since": month_start.strftime("%Y-%m-%d"),
-              "until": month_end.strftime("%Y-%m-%d")
+              "since": current.strftime("%Y-%m-%d"),
+              "until": chunk_end.strftime("%Y-%m-%d")
             })
             
-            current = month_end
+            current = chunk_end
           
           print(f"::set-output name=matrix::{json.dumps(ranges)}")
           EOF
@@ -65,7 +60,7 @@ jobs:
     needs: [generate-matrix, clone-faa-repo]
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 5  # Process 5 chunks at a time
+      max-parallel: 10  # Process 10 chunks at a time
       matrix:
         range: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
     steps:
@@ -126,5 +121,51 @@ jobs:
             Processing period: 2023-08-16 to 2026-01-01
             Generated: ${{ github.event.repository.updated_at }}
           files: release-files/*.csv
+          draft: false
+          prerelease: false
+
+  concatenate-and-release:
+    needs: process-chunk
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      
+      - name: Prepare CSVs for concatenation
+        run: |
+          mkdir -p data/faa_releasable_historical
+          find artifacts -name "*.csv" -exec cp {} data/faa_releasable_historical/ \;
+          ls -lh data/faa_releasable_historical/
+      
+      - name: Concatenate all CSVs
+        run: |
+          python scripts/concat_csvs.py
+      
+      - name: Create Combined Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: historical-faa-combined-${{ github.run_number }}
+          name: Historical FAA Data Combined Release ${{ github.run_number }}
+          body: |
+            Combined historical FAA aircraft data (all chunks concatenated)
+            Processing period: 2023-08-16 to 2026-01-01
+            Generated: ${{ github.event.repository.updated_at }}
+          files: data/planequery_aircraft/*.csv
           draft: false
           prerelease: false
