@@ -22,9 +22,9 @@ jobs:
           ranges = []
           current = start
           
-          # Process in 7-day chunks (weekly)
+          # Process in 1-day chunks (daily)
           while current < end:
-            chunk_end = current + timedelta(days=7)
+            chunk_end = current + timedelta(days=1)
             # Don't go past the end date
             if chunk_end > end:
               chunk_end = end
