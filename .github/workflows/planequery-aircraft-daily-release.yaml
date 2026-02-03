@@ -39,7 +39,7 @@ jobs:
         id: meta
         run: |
           DATE=$(date -u +"%Y-%m-%d")
-          TAG="faa-${DATE}"
+          TAG="planequery-aircraft-${DATE}"
           # Find the CSV file in data/planequery_aircraft matching the pattern
           CSV_FILE=$(ls data/planequery_aircraft/planequery_aircraft_*_${DATE}.csv | head -1)
           CSV_BASENAME=$(basename "$CSV_FILE")

@@ -126,12 +126,13 @@ def download_latest_aircraft_csv(
     return saved_to
 
 def get_latest_aircraft_csv_df():
-    csv_path = download_latest_aircraft_csv()
+    # csv_path = download_latest_aircraft_csv()
+    csv_path = '/Users/jonahgoode/Documents/PlaneQuery/Code/planequery-aircraft/data/planequery_aircraft/planequery_aircraft_2023-08-16_2026-01-31.csv'
     import pandas as pd
     df = pd.read_csv(csv_path, dtype={'transponder_code': str, 
            'unique_regulatory_id': str, 
            'registrant_county': str})
-    
+    df = df.fillna("")
     # Extract date from filename pattern: planequery_aircraft_{date}_{date}.csv
     match = re.search(r"planequery_aircraft_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:

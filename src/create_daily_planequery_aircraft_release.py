@@ -7,20 +7,20 @@ out_dir.mkdir(parents=True, exist_ok=True)
 zip_name = f"ReleasableAircraft_{date_str}.zip"
 
 zip_path = out_dir / zip_name
+if not zip_path.exists():
+    # URL and paths
+    url = "https://registry.faa.gov/database/ReleasableAircraft.zip"
+    from urllib.request import Request, urlopen
 
-# URL and paths
-url = "https://registry.faa.gov/database/ReleasableAircraft.zip"
-from urllib.request import Request, urlopen
+    req = Request(
+        url,
+        headers={"User-Agent": "Mozilla/5.0"},
+        method="GET",
+    )
 
-req = Request(
-    url,
-    headers={"User-Agent": "Mozilla/5.0"},
-    method="GET",
-)
-
-with urlopen(req, timeout=120) as r:
-    body = r.read()
-    zip_path.write_bytes(body)
+    with urlopen(req, timeout=120) as r:
+        body = r.read()
+        zip_path.write_bytes(body)
 
 OUT_ROOT = Path("data/planequery_aircraft")
 OUT_ROOT.mkdir(parents=True, exist_ok=True)

@@ -66,7 +66,7 @@ def normalize(s: pd.Series) -> pd.Series:
 
 
 def concat_faa_historical_df(df_base, df_new):
-
+    df_new = df_new[df_base.columns]
     df_base = pd.concat([df_base, df_new], ignore_index=True)
     
     CONTENT_COLS = [
@@ -74,10 +74,49 @@ def concat_faa_historical_df(df_base, df_new):
         if c not in {"download_date"}
     ]
     
+    # Normalize values to handle numeric type, formatting, and list ordering differences
+    def normalize_series(series):
+        def normalize_value(val):
+            # Handle lists (sort them for consistent comparison)
+            if isinstance(val, list):
+                return "|".join(sorted(str(v) for v in val))
+            
+            # Convert to string
+            val_str = str(val).strip()
+            
+            # Handle empty strings
+            if val_str == "" or val_str == "nan":
+                return ""
+            
+            # Check if it looks like a list representation (starts with [ )
+            if val_str.startswith('[') and val_str.endswith(']'):
+                try:
+                    # Try to parse as a list-like string
+                    import ast
+                    parsed = ast.literal_eval(val_str)
+                    if isinstance(parsed, list):
+                        return "|".join(sorted(str(v) for v in parsed))
+                except (ValueError, SyntaxError):
+                    pass  # Not a valid list, continue to other checks
+            
+            # Try to normalize as number
+            try:
+                # Remove leading zeros and convert float/int representations
+                num_val = float(val_str)
+                # If it's a whole number, return as int string (no .0)
+                if num_val == int(num_val):
+                    return str(int(num_val))
+                # Otherwise return as float
+                return str(num_val)
+            except (ValueError, OverflowError):
+                # Not a number, return as-is
+                return val_str
+        
+        return series.apply(normalize_value)
+    
     df_base["row_fingerprint"] = (
         df_base[CONTENT_COLS]
-        .fillna("")
-        .astype(str)
+        .apply(normalize_series, axis=0)
         .apply(lambda row: "|".join(row), axis=1)
     )
     
