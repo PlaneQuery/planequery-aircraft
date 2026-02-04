@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/reference.schema.json",
+  "description": "Cabin class codes used in seat configuration strings",
+  "codes": [
+    {
+      "code": "P",
+      "class": "first",
+      "name": "First Class / La Première",
+      "notes": "Premium first class, used by Air France for La Première"
+    },
+    {
+      "code": "F",
+      "class": "first",
+      "name": "First Class",
+      "notes": "Traditional first class"
+    },
+    {
+      "code": "J",
+      "class": "business",
+      "name": "Business Class",
+      "notes": "Standard business class code"
+    },
+    {
+      "code": "C",
+      "class": "business",
+      "name": "Business Class",
+      "notes": "Alternative business class code, sometimes used for intra-European business"
+    },
+    {
+      "code": "W",
+      "class": "premium_economy",
+      "name": "Premium Economy",
+      "notes": "Premium economy class"
+    },
+    {
+      "code": "Y",
+      "class": "economy",
+      "name": "Economy Class",
+      "notes": "Standard economy class"
+    }
+  ],
+  "parsing_notes": [
+    "Configuration strings follow format: [CLASS_CODE][SEAT_COUNT]",
+    "Seat count is typically 2-3 digits (e.g., J034, Y266, or J34, Y266)",
+    "Multiple classes are concatenated: P004J058W028Y206",
+    "Parse left-to-right, extracting each class code followed by its count"
+  ],
+  "examples": [
+    {
+      "configuration": "Y148",
+      "parsed": { "economy": 148 },
+      "total": 148,
+      "description": "Single-class economy (e.g., A220)"
+    },
+    {
+      "configuration": "J034W024Y266",
+      "parsed": { "business": 34, "premium_economy": 24, "economy": 266 },
+      "total": 324,
+      "description": "Three-class long-haul (e.g., A350-900)"
+    },
+    {
+      "configuration": "P004J058W028Y206",
+      "parsed": { "first": 4, "business": 58, "premium_economy": 28, "economy": 206 },
+      "total": 296,
+      "description": "Four-class with La Première (e.g., 777-300ER)"
+    },
+    {
+      "configuration": "C108Y066",
+      "parsed": { "business": 108, "economy": 66 },
+      "total": 174,
+      "description": "Two-class short-haul with business (e.g., A320)"
+    }
+  ]
+}
+

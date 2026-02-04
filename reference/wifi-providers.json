@@ -1,0 +1,87 @@
+{
+  "$schema": "../schema/reference.schema.json",
+  "description": "Known WiFi providers and their characteristics",
+  "providers": [
+    {
+      "id": "starlink",
+      "name": "Starlink",
+      "company": "SpaceX",
+      "technology": "LEO satellite",
+      "speed_tier": "high-speed",
+      "typical_speed_mbps": "50-200",
+      "coverage": "global",
+      "notes": "Low-earth orbit constellation, low latency"
+    },
+    {
+      "id": "viasat",
+      "name": "Viasat",
+      "company": "Viasat Inc.",
+      "technology": "Ka-band GEO satellite",
+      "speed_tier": "high-speed",
+      "typical_speed_mbps": "12-100",
+      "coverage": "regional",
+      "notes": "ViaSat-1, ViaSat-2, ViaSat-3 satellites"
+    },
+    {
+      "id": "gogo_2ku",
+      "name": "Gogo 2Ku",
+      "company": "Gogo",
+      "technology": "Dual Ku-band satellite",
+      "speed_tier": "high-speed",
+      "typical_speed_mbps": "15-70",
+      "coverage": "global",
+      "notes": "Dual antenna system for better coverage"
+    },
+    {
+      "id": "gogo_atg",
+      "name": "Gogo ATG",
+      "company": "Gogo",
+      "technology": "Air-to-ground",
+      "speed_tier": "low-speed",
+      "typical_speed_mbps": "3-10",
+      "coverage": "continental_us",
+      "notes": "Ground-based towers, US domestic only"
+    },
+    {
+      "id": "panasonic_ku",
+      "name": "Panasonic Ku-band",
+      "company": "Panasonic Avionics",
+      "technology": "Ku-band satellite",
+      "speed_tier": "low-speed",
+      "typical_speed_mbps": "5-20",
+      "coverage": "global",
+      "notes": "eXConnect service"
+    },
+    {
+      "id": "inmarsat_gx",
+      "name": "Inmarsat GX Aviation",
+      "company": "Inmarsat",
+      "technology": "Ka-band GEO satellite",
+      "speed_tier": "high-speed",
+      "typical_speed_mbps": "15-50",
+      "coverage": "global",
+      "notes": "Global Xpress network"
+    },
+    {
+      "id": "anuvu",
+      "name": "Anuvu",
+      "company": "Anuvu (formerly Global Eagle)",
+      "technology": "Ku-band satellite",
+      "speed_tier": "low-speed",
+      "typical_speed_mbps": "5-15",
+      "coverage": "regional",
+      "notes": "Formerly Global Eagle Entertainment"
+    },
+    {
+      "id": "thales_flexvue",
+      "name": "Thales FlexVue",
+      "company": "Thales",
+      "technology": "Ku/Ka-band satellite",
+      "speed_tier": "high-speed",
+      "typical_speed_mbps": "20-50",
+      "coverage": "global",
+      "notes": "Part of Thales InFlyt Experience"
+    }
+  ]
+}
+

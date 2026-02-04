@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fleet-catalog/schema/aircraft.schema.json",
+  "title": "Airline Fleet Catalog",
+  "description": "Standardized schema for tracking airline fleet properties across multiple carriers",
+  "type": "object",
+  "required": ["schema_version", "airline", "generated_at", "aircraft"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Semantic version of the schema",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "airline": {
+      "type": "object",
+      "required": ["iata_code", "name"],
+      "properties": {
+        "iata_code": {
+          "type": "string",
+          "description": "2-letter IATA airline code",
+          "pattern": "^[A-Z0-9]{2}$"
+        },
+        "icao_code": {
+          "type": ["string", "null"],
+          "description": "3-letter ICAO airline code",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full airline name"
+        },
+        "country": {
+          "type": ["string", "null"],
+          "description": "ISO 3166-1 alpha-2 country code"
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this file was generated"
+    },
+    "aircraft_count": {
+      "type": "integer",
+      "description": "Total number of aircraft in this file"
+    },
+    "aircraft": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/aircraft"
+      }
+    }
+  },
+  "$defs": {
+    "aircraft": {
+      "type": "object",
+      "required": ["registration"],
+      "properties": {
+        "registration": {
+          "type": "string",
+          "description": "Aircraft registration (tail number) without dashes"
+        },
+        "icao24": {
+          "type": ["string", "null"],
+          "description": "24-bit ICAO Mode-S transponder address in hexadecimal"
+        },
+        "aircraft_type": {
+          "$ref": "#/$defs/aircraft_type"
+        },
+        "operator": {
+          "$ref": "#/$defs/operator"
+        },
+        "cabin": {
+          "$ref": "#/$defs/cabin"
+        },
+        "connectivity": {
+          "$ref": "#/$defs/connectivity"
+        },
+        "ife": {
+          "$ref": "#/$defs/ife"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "stored", "maintenance", "retired"],
+          "description": "Current operational status"
+        },
+        "tracking": {
+          "$ref": "#/$defs/tracking"
+        },
+        "metadata": {
+          "$ref": "#/$defs/metadata"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/history_entry"
+          }
+        }
+      }
+    },
+    "aircraft_type": {
+      "type": "object",
+      "properties": {
+        "iata_code": {
+          "type": ["string", "null"],
+          "description": "IATA aircraft type code (e.g., 77W, 359)"
+        },
+        "icao_code": {
+          "type": ["string", "null"],
+          "description": "ICAO aircraft type designator (e.g., B77W, A359)"
+        },
+        "manufacturer": {
+          "type": ["string", "null"],
+          "description": "Aircraft manufacturer (Airbus, Boeing, Embraer, etc.)"
+        },
+        "model": {
+          "type": ["string", "null"],
+          "description": "Aircraft model (A350, 777, etc.)"
+        },
+        "variant": {
+          "type": ["string", "null"],
+          "description": "Aircraft variant (900, 300ER, etc.)"
+        },
+        "full_name": {
+          "type": ["string", "null"],
+          "description": "Full aircraft type name"
+        }
+      }
+    },
+    "operator": {
+      "type": "object",
+      "description": "Operational details specific to this aircraft",
+      "properties": {
+        "sub_fleet_code": {
+          "type": ["string", "null"],
+          "description": "Internal sub-fleet code (e.g., AB, CA, AR)"
+        },
+        "cabin_crew_employer": {
+          "type": ["string", "null"],
+          "description": "Airline code of cabin crew employer"
+        },
+        "cockpit_crew_employer": {
+          "type": ["string", "null"],
+          "description": "Airline code of cockpit crew employer"
+        }
+      }
+    },
+    "cabin": {
+      "type": "object",
+      "properties": {
+        "physical_configuration": {
+          "type": ["string", "null"],
+          "description": "Physical seat configuration code (e.g., J034W024Y266)"
+        },
+        "operational_configuration": {
+          "type": ["string", "null"],
+          "description": "Operational/saleable seat configuration"
+        },
+        "saleable_configuration": {
+          "type": ["string", "null"],
+          "description": "Saleable seat configuration"
+        },
+        "total_seats": {
+          "type": ["integer", "null"],
+          "description": "Total number of passenger seats"
+        },
+        "classes": {
+          "type": "object",
+          "properties": {
+            "first": {
+              "type": "integer",
+              "description": "Number of first class seats"
+            },
+            "business": {
+              "type": "integer",
+              "description": "Number of business class seats"
+            },
+            "premium_economy": {
+              "type": "integer",
+              "description": "Number of premium economy seats"
+            },
+            "economy": {
+              "type": "integer",
+              "description": "Number of economy seats"
+            }
+          }
+        },
+        "freight_configuration": {
+          "type": ["string", "null"],
+          "description": "Cargo hold configuration (e.g., PP008LL012)"
+        }
+      }
+    },
+    "connectivity": {
+      "type": "object",
+      "properties": {
+        "wifi": {
+          "type": "string",
+          "enum": ["none", "low-speed", "high-speed"],
+          "description": "WiFi availability and speed tier"
+        },
+        "wifi_provider": {
+          "type": ["string", "null"],
+          "description": "WiFi service provider (Starlink, Viasat, Gogo 2Ku, etc.)"
+        },
+        "satellite": {
+          "type": ["boolean", "null"],
+          "description": "Whether satellite connectivity is available"
+        },
+        "live_tv": {
+          "type": ["boolean", "null"],
+          "description": "Whether live TV is available"
+        },
+        "power_outlets": {
+          "type": ["boolean", "null"],
+          "description": "Whether AC power outlets are available"
+        },
+        "usb_ports": {
+          "type": ["boolean", "null"],
+          "description": "Whether USB charging ports are available"
+        }
+      }
+    },
+    "ife": {
+      "type": "object",
+      "description": "In-flight entertainment system",
+      "properties": {
+        "type": {
+          "type": ["string", "null"],
+          "enum": ["none", "overhead", "seatback", "streaming", "hybrid", null],
+          "description": "Type of IFE system"
+        },
+        "personal_screens": {
+          "type": ["boolean", "null"],
+          "description": "Whether personal seatback screens are available"
+        }
+      }
+    },
+    "tracking": {
+      "type": "object",
+      "description": "Flight tracking statistics",
+      "properties": {
+        "first_seen": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Date when aircraft was first tracked"
+        },
+        "last_seen": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Date when aircraft was last tracked"
+        },
+        "total_flights": {
+          "type": ["integer", "null"],
+          "description": "Total number of flights tracked"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata about the aircraft",
+      "properties": {
+        "delivery_date": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Date aircraft was delivered to airline"
+        },
+        "msn": {
+          "type": ["string", "null"],
+          "description": "Manufacturer Serial Number"
+        },
+        "line_number": {
+          "type": ["string", "null"],
+          "description": "Production line number"
+        },
+        "production_site": {
+          "type": ["string", "null"],
+          "description": "Factory/production site (e.g., Toulouse, Hamburg, Mirabel)"
+        },
+        "engine_type": {
+          "type": ["string", "null"],
+          "description": "Engine model (e.g., Trent XWB-84, GE90-115B)"
+        },
+        "aircraft_name": {
+          "type": ["string", "null"],
+          "description": "Aircraft given name (e.g., 'Fort-de-France')"
+        },
+        "livery": {
+          "type": ["string", "null"],
+          "description": "Special livery or paint scheme"
+        },
+        "comments": {
+          "type": ["string", "null"],
+          "description": "Additional notes or comments"
+        },
+        "created_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "history_entry": {
+      "type": "object",
+      "required": ["timestamp", "property"],
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Date or datetime when change was detected"
+        },
+        "property": {
+          "type": "string",
+          "description": "Dot-notation path to the changed property"
+        },
+        "old_value": {
+          "description": "Previous value"
+        },
+        "new_value": {
+          "description": "New value"
+        },
+        "source": {
+          "type": ["string", "null"],
+          "enum": ["flight_api", "airline_api", "manual", "planespotters", "community", null],
+          "description": "Source of the change detection"
+        }
+      }
+    }
+  }
+}
+
