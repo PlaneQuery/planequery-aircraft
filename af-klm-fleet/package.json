@@ -1,0 +1,38 @@
+{
+  "name": "fleet-catalog",
+  "version": "1.0.0",
+  "description": "Open-source catalog of airline fleets with historical tracking",
+  "type": "module",
+  "scripts": {
+    "update:af": "node fleet-update.js --airline AF",
+    "update:kl": "node fleet-update.js --airline KL",
+    "update:all": "node fleet-update.js --airline AF && node fleet-update.js --airline KL && node generate-readme.js",
+    "update:af:dry": "node fleet-update.js --airline AF --dry-run",
+    "update:kl:dry": "node fleet-update.js --airline KL --dry-run",
+    "bootstrap:af": "node fleet-update.js --airline AF --bootstrap",
+    "bootstrap:kl": "node fleet-update.js --airline KL --bootstrap",
+    "readme": "node generate-readme.js",
+    "validate": "node scripts/validate.js"
+  },
+  "keywords": [
+    "aviation",
+    "airlines",
+    "fleet",
+    "aircraft",
+    "tracking"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fleet-catalog/fleet-catalog"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "airlines/",
+    "schema/",
+    "reference/"
+  ]
+}
+

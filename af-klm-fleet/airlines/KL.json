@@ -1,0 +1,5322 @@
+{
+  "schema_version": "1.0.0",
+  "airline": {
+    "iata_code": "KL",
+    "name": "KLM Royal Dutch Airlines",
+    "country": "Netherlands"
+  },
+  "generated_at": "2026-02-04T21:41:39.758Z",
+  "aircraft_count": 117,
+  "aircraft": [
+    {
+      "registration": "PHAXA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXC",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.039Z",
+        "updated_at": "2026-02-04T21:41:06.039Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXG",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXH",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXI",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXK",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXL",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAXM",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "32Q",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A321",
+        "variant": null,
+        "full_name": "AIRBUS A321NEO"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M197",
+        "saleable_configuration": null,
+        "total_seats": 227,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 197
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAOA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "332",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "200",
+        "full_name": "AIRBUS A330-200"
+      },
+      "operator": {
+        "sub_fleet_code": "L",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C018M246",
+        "saleable_configuration": null,
+        "total_seats": 264,
+        "classes": {
+          "first": 0,
+          "business": 18,
+          "premium_economy": 0,
+          "economy": 246
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:41:39.056Z"
+      },
+      "history": [
+        {
+          "timestamp": "2026-02-01",
+          "property": "cabin.physical_configuration",
+          "old_value": "C018M246",
+          "new_value": "C18M246",
+          "source": "airline_api"
+        },
+        {
+          "timestamp": "2026-02-03",
+          "property": "cabin.physical_configuration",
+          "old_value": "C18M246",
+          "new_value": "C018M246",
+          "source": "airline_api"
+        }
+      ]
+    },
+    {
+      "registration": "PHAOB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "332",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "200",
+        "full_name": "AIRBUS A330-200"
+      },
+      "operator": {
+        "sub_fleet_code": "L",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C018M246",
+        "saleable_configuration": null,
+        "total_seats": 264,
+        "classes": {
+          "first": 0,
+          "business": 18,
+          "premium_economy": 0,
+          "economy": 246
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:41:13.919Z"
+      },
+      "history": [
+        {
+          "timestamp": "2026-01-30",
+          "property": "cabin.physical_configuration",
+          "old_value": "C018M246",
+          "new_value": "C18M246",
+          "source": "airline_api"
+        },
+        {
+          "timestamp": "2026-01-31",
+          "property": "cabin.physical_configuration",
+          "old_value": "C18M246",
+          "new_value": "C018M246",
+          "source": "airline_api"
+        }
+      ]
+    },
+    {
+      "registration": "PHAOC",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "332",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "200",
+        "full_name": "AIRBUS A330-200"
+      },
+      "operator": {
+        "sub_fleet_code": "L",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C018M246",
+        "saleable_configuration": null,
+        "total_seats": 264,
+        "classes": {
+          "first": 0,
+          "business": 18,
+          "premium_economy": 0,
+          "economy": 246
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAOD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "332",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "200",
+        "full_name": "AIRBUS A330-200"
+      },
+      "operator": {
+        "sub_fleet_code": "L",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C018M246",
+        "saleable_configuration": null,
+        "total_seats": 264,
+        "classes": {
+          "first": 0,
+          "business": 18,
+          "premium_economy": 0,
+          "economy": 246
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-31",
+        "last_seen": "2026-02-03",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:13.918Z",
+        "updated_at": "2026-02-04T21:41:13.918Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAOE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "332",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "200",
+        "full_name": "AIRBUS A330-200"
+      },
+      "operator": {
+        "sub_fleet_code": "L",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C018M246",
+        "saleable_configuration": null,
+        "total_seats": 264,
+        "classes": {
+          "first": 0,
+          "business": 18,
+          "premium_economy": 0,
+          "economy": 246
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAKA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "333",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "300",
+        "full_name": "AIRBUS A330-300"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M262",
+        "saleable_configuration": null,
+        "total_seats": 292,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 262
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:40:57.259Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAKB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "333",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "300",
+        "full_name": "AIRBUS A330-300"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M262",
+        "saleable_configuration": null,
+        "total_seats": 292,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 262
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-02-01",
+        "last_seen": "2026-02-02",
+        "total_flights": 2
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:21.551Z",
+        "updated_at": "2026-02-04T21:41:21.551Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAKD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "333",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "300",
+        "full_name": "AIRBUS A330-300"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M262",
+        "saleable_configuration": null,
+        "total_seats": 292,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 262
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:40:57.259Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAKE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "333",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "300",
+        "full_name": "AIRBUS A330-300"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M262",
+        "saleable_configuration": null,
+        "total_seats": 292,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 262
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHAKF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "333",
+        "icao_code": null,
+        "manufacturer": "Airbus",
+        "model": "A330",
+        "variant": "300",
+        "full_name": "AIRBUS A330-300"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030M262",
+        "saleable_configuration": null,
+        "total_seats": 292,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 0,
+          "economy": 262
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:41:30.139Z"
+      },
+      "history": [
+        {
+          "timestamp": "2026-01-31",
+          "property": "cabin.physical_configuration",
+          "old_value": "C030M262",
+          "new_value": "C30M262",
+          "source": "airline_api"
+        },
+        {
+          "timestamp": "2026-02-02",
+          "property": "cabin.physical_configuration",
+          "old_value": "C30M262",
+          "new_value": "C030M262",
+          "source": "airline_api"
+        }
+      ]
+    },
+    {
+      "registration": "PHBCA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBCB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBCD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBCE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBCG",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.039Z",
+        "updated_at": "2026-02-04T21:41:06.039Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBCH",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBCK",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBCL",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGC",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXC",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXG",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXH",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXI",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXM",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXN",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "F",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.038Z",
+        "updated_at": "2026-02-04T21:41:06.038Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXU",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXV",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-01-29",
+        "total_flights": 1
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXW",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXY",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXZ",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHHSD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHHSE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73H",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "800",
+        "full_name": "BOEING 737-800 (WINGLETS) PASSENGER/BBJ2"
+      },
+      "operator": {
+        "sub_fleet_code": "I",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M150",
+        "saleable_configuration": null,
+        "total_seats": 186,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 150
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXO",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73J",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "900",
+        "full_name": "BOEING 737-900 (WINGLETS) PASSENGER/BBJ3"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C056M132",
+        "saleable_configuration": null,
+        "total_seats": 188,
+        "classes": {
+          "first": 0,
+          "business": 56,
+          "premium_economy": 0,
+          "economy": 132
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXP",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73J",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "900",
+        "full_name": "BOEING 737-900 (WINGLETS) PASSENGER/BBJ3"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C056M132",
+        "saleable_configuration": null,
+        "total_seats": 188,
+        "classes": {
+          "first": 0,
+          "business": 56,
+          "premium_economy": 0,
+          "economy": 132
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXR",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73J",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "900",
+        "full_name": "BOEING 737-900 (WINGLETS) PASSENGER/BBJ3"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C056M132",
+        "saleable_configuration": null,
+        "total_seats": 188,
+        "classes": {
+          "first": 0,
+          "business": 56,
+          "premium_economy": 0,
+          "economy": 132
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXS",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73J",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "900",
+        "full_name": "BOEING 737-900 (WINGLETS) PASSENGER/BBJ3"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C056M132",
+        "saleable_configuration": null,
+        "total_seats": 188,
+        "classes": {
+          "first": 0,
+          "business": 56,
+          "premium_economy": 0,
+          "economy": 132
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBXT",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73J",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "900",
+        "full_name": "BOEING 737-900 (WINGLETS) PASSENGER/BBJ3"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C056M132",
+        "saleable_configuration": null,
+        "total_seats": 188,
+        "classes": {
+          "first": 0,
+          "business": 56,
+          "premium_economy": 0,
+          "economy": 132
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "700",
+        "full_name": "BOEING 737-700 (WINGLETS) PASSENGER/BBJ1"
+      },
+      "operator": {
+        "sub_fleet_code": "E",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M106",
+        "saleable_configuration": null,
+        "total_seats": 142,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 106
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGG",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "700",
+        "full_name": "BOEING 737-700 (WINGLETS) PASSENGER/BBJ1"
+      },
+      "operator": {
+        "sub_fleet_code": "E",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M106",
+        "saleable_configuration": null,
+        "total_seats": 142,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 106
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGI",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "700",
+        "full_name": "BOEING 737-700 (WINGLETS) PASSENGER/BBJ1"
+      },
+      "operator": {
+        "sub_fleet_code": "E",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M106",
+        "saleable_configuration": null,
+        "total_seats": 142,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 106
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.038Z",
+        "updated_at": "2026-02-04T21:41:06.038Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGM",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "700",
+        "full_name": "BOEING 737-700 (WINGLETS) PASSENGER/BBJ1"
+      },
+      "operator": {
+        "sub_fleet_code": "E",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M106",
+        "saleable_configuration": null,
+        "total_seats": 142,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 106
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBGQ",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "73W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "737",
+        "variant": "700",
+        "full_name": "BOEING 737-700 (WINGLETS) PASSENGER/BBJ1"
+      },
+      "operator": {
+        "sub_fleet_code": "E",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C036M106",
+        "saleable_configuration": null,
+        "total_seats": 142,
+        "classes": {
+          "first": 0,
+          "business": 36,
+          "premium_economy": 0,
+          "economy": 106
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "H",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W032M219",
+        "saleable_configuration": null,
+        "total_seats": 286,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 32,
+          "economy": 219
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQG",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQH",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQI",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQK",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQL",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "H",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W032M219",
+        "saleable_configuration": null,
+        "total_seats": 286,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 32,
+          "economy": 219
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.038Z",
+        "updated_at": "2026-02-04T21:41:06.038Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQM",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-01",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQN",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:40:57.259Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQO",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBQP",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "772",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "200",
+        "full_name": "BOEING 777-200/200 ER"
+      },
+      "operator": {
+        "sub_fleet_code": "G",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M229",
+        "saleable_configuration": null,
+        "total_seats": 288,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 229
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:40:57.259Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:40:57.259Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVB",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVC",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.039Z",
+        "updated_at": "2026-02-04T21:41:06.039Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVI",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVK",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVN",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVO",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVP",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.038Z",
+        "updated_at": "2026-02-04T21:41:06.038Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVR",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVS",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-01",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVU",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVV",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:40:57.259Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBVW",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "77W",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "777",
+        "variant": "300",
+        "full_name": "BOEING 777-300ER"
+      },
+      "operator": {
+        "sub_fleet_code": "D",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C035W024M322",
+        "saleable_configuration": null,
+        "total_seats": 381,
+        "classes": {
+          "first": 0,
+          "business": 35,
+          "premium_economy": 24,
+          "economy": 322
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-01",
+        "total_flights": 4
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKC",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKG",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKH",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "none",
+        "wifi_provider": null,
+        "satellite": false
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKI",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKK",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKL",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-02",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKM",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.038Z",
+        "updated_at": "2026-02-04T21:41:06.038Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKO",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKP",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKQ",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKR",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBKS",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "781",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "10",
+        "full_name": "BOEING 787-10"
+      },
+      "operator": {
+        "sub_fleet_code": "C",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C038W028M252",
+        "saleable_configuration": null,
+        "total_seats": 318,
+        "classes": {
+          "first": 0,
+          "business": 38,
+          "premium_economy": 28,
+          "economy": 252
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-02-02",
+        "last_seen": "2026-02-03",
+        "total_flights": 2
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:30.139Z",
+        "updated_at": "2026-02-04T21:41:30.139Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHA",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHC",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.259Z",
+        "updated_at": "2026-02-04T21:40:57.259Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHD",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-30",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:41:06.039Z",
+        "updated_at": "2026-02-04T21:41:06.039Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHE",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHF",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHG",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-01-31",
+        "total_flights": 3
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHI",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHL",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHM",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHN",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 6
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHO",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.260Z",
+        "updated_at": "2026-02-04T21:40:57.260Z"
+      },
+      "history": []
+    },
+    {
+      "registration": "PHBHP",
+      "icao24": null,
+      "aircraft_type": {
+        "iata_code": "789",
+        "icao_code": null,
+        "manufacturer": "Boeing",
+        "model": "787",
+        "variant": "9",
+        "full_name": "BOEING 787-9"
+      },
+      "operator": {
+        "sub_fleet_code": "B",
+        "cabin_crew_employer": "KL",
+        "cockpit_crew_employer": "KL"
+      },
+      "cabin": {
+        "physical_configuration": "C030W021M224",
+        "saleable_configuration": null,
+        "total_seats": 275,
+        "classes": {
+          "first": 0,
+          "business": 30,
+          "premium_economy": 21,
+          "economy": 224
+        },
+        "freight_configuration": null
+      },
+      "connectivity": {
+        "wifi": "low-speed",
+        "wifi_provider": null,
+        "satellite": true
+      },
+      "status": "active",
+      "tracking": {
+        "first_seen": "2026-01-29",
+        "last_seen": "2026-02-03",
+        "total_flights": 5
+      },
+      "metadata": {
+        "created_at": "2026-02-04T21:40:57.261Z",
+        "updated_at": "2026-02-04T21:40:57.261Z"
+      },
+      "history": []
+    }
+  ]
+}
