@@ -1,0 +1,10 @@
+FROM --platform=linux/arm64 python:3.12-slim
+
+WORKDIR /app
+
+COPY requirements.reducer.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY reducer.py .
+
+CMD ["python", "-u", "reducer.py"]

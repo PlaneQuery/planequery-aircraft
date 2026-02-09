@@ -1,3 +1,3 @@
 faa-aircraft-registry==0.1.0
 pandas==3.0.0
-
+clickhouse-connect==0.10.0

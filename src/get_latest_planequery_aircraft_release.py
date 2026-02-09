@@ -109,7 +109,7 @@ def download_latest_aircraft_csv(
     repo: str = REPO,
 ) -> Path:
     """
-    Download the latest planequery_aircraft_*.csv file from the latest GitHub release.
+    Download the latest planequery_aircraft_faa_*.csv file from the latest GitHub release.
 
     Args:
         output_dir: Directory to save the downloaded file (default: "downloads")
@@ -120,25 +120,70 @@ def download_latest_aircraft_csv(
         Path to the downloaded file
     """
     assets = get_latest_release_assets(repo, github_token=github_token)
-    asset = pick_asset(assets, name_regex=r"^planequery_aircraft_.*\.csv$")
+    try:
+        asset = pick_asset(assets, name_regex=r"^planequery_aircraft_faa_.*\.csv$")
+    except FileNotFoundError:
+        # Fallback to old naming pattern
+        asset = pick_asset(assets, name_regex=r"^planequery_aircraft_\d{4}-\d{2}-\d{2}_.*\.csv$")
     saved_to = download_asset(asset, output_dir / asset.name, github_token=github_token)
     print(f"Downloaded: {asset.name} ({asset.size} bytes) -> {saved_to}")
     return saved_to
 
-def get_latest_aircraft_csv_df():
+def get_latest_aircraft_faa_csv_df():
     csv_path = download_latest_aircraft_csv()
     import pandas as pd
     df = pd.read_csv(csv_path, dtype={'transponder_code': str, 
            'unique_regulatory_id': str, 
            'registrant_county': str})
     df = df.fillna("")
-    # Extract date from filename pattern: planequery_aircraft_{date}_{date}.csv
-    match = re.search(r"planequery_aircraft_(\d{4}-\d{2}-\d{2})_", str(csv_path))
+    # Extract start date from filename pattern: planequery_aircraft_faa_{start_date}_{end_date}.csv
+    match = re.search(r"planequery_aircraft_faa_(\d{4}-\d{2}-\d{2})_", str(csv_path))
+    if not match:
+        # Fallback to old naming pattern: planequery_aircraft_{start_date}_{end_date}.csv
+        match = re.search(r"planequery_aircraft_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:
         raise ValueError(f"Could not extract date from filename: {csv_path.name}")
     
     date_str = match.group(1)
     return df, date_str
+
+
+def download_latest_aircraft_adsb_csv(
+    output_dir: Path = Path("downloads"),
+    github_token: Optional[str] = None,
+    repo: str = REPO,
+) -> Path:
+    """
+    Download the latest planequery_aircraft_adsb_*.csv file from the latest GitHub release.
+
+    Args:
+        output_dir: Directory to save the downloaded file (default: "downloads")
+        github_token: Optional GitHub token for authentication
+        repo: GitHub repository in format "owner/repo" (default: REPO)
+
+    Returns:
+        Path to the downloaded file
+    """
+    assets = get_latest_release_assets(repo, github_token=github_token)
+    asset = pick_asset(assets, name_regex=r"^planequery_aircraft_adsb_.*\.csv$")
+    saved_to = download_asset(asset, output_dir / asset.name, github_token=github_token)
+    print(f"Downloaded: {asset.name} ({asset.size} bytes) -> {saved_to}")
+    return saved_to
+
+
+def get_latest_aircraft_adsb_csv_df():
+    csv_path = download_latest_aircraft_adsb_csv()
+    import pandas as pd
+    df = pd.read_csv(csv_path)
+    df = df.fillna("")
+    # Extract start date from filename pattern: planequery_aircraft_adsb_{start_date}_{end_date}.csv
+    match = re.search(r"planequery_aircraft_adsb_(\d{4}-\d{2}-\d{2})_", str(csv_path))
+    if not match:
+        raise ValueError(f"Could not extract date from filename: {csv_path.name}")
+    
+    date_str = match.group(1)
+    return df, date_str
+
 
 if __name__ == "__main__":
     download_latest_aircraft_csv()

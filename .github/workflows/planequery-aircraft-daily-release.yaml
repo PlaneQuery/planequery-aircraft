@@ -2,27 +2,54 @@ name: planequery-aircraft Daily Release
 
 on:
   schedule:
-    # 6:00pm UTC every day
+    # 6:00pm UTC every day - runs on default branch, triggers both
     - cron: "0 06 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build-and-release:
+  trigger-releases:
     runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Trigger main branch release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'planequery-aircraft-daily-release.yaml',
+              ref: 'main'
+            });
+      
+      - name: Trigger develop branch release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'planequery-aircraft-daily-release.yaml',
+              ref: 'develop'
+            });
+
+  build-and-release:
+    runs-on: ubuntu-24.04-arm
+    if: github.event_name != 'schedule'
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.14"
 
       - name: Install dependencies
         run: |
@@ -30,8 +57,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run daily release script
+        env:
+          CLICKHOUSE_HOST: ${{ secrets.CLICKHOUSE_HOST }}
+          CLICKHOUSE_USERNAME: ${{ secrets.CLICKHOUSE_USERNAME }}
+          CLICKHOUSE_PASSWORD: ${{ secrets.CLICKHOUSE_PASSWORD }}
         run: |
           python src/create_daily_planequery_aircraft_release.py
+          python src/create_daily_planequery_aircraft_adsb_release.py
           ls -lah data/faa_releasable
           ls -lah data/planequery_aircraft
 
@@ -39,15 +71,26 @@ jobs:
         id: meta
         run: |
           DATE=$(date -u +"%Y-%m-%d")
-          TAG="planequery-aircraft-${DATE}"
-          # Find the CSV file in data/planequery_aircraft matching the pattern
-          CSV_FILE=$(ls data/planequery_aircraft/planequery_aircraft_*_${DATE}.csv | head -1)
-          CSV_BASENAME=$(basename "$CSV_FILE")
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          BRANCH_SUFFIX=""
+          if [ "$BRANCH_NAME" = "main" ]; then
+            BRANCH_SUFFIX="-main"
+          elif [ "$BRANCH_NAME" = "develop" ]; then
+            BRANCH_SUFFIX="-develop"
+          fi
+          TAG="planequery-aircraft-${DATE}${BRANCH_SUFFIX}"
+          # Find the CSV files in data/planequery_aircraft matching the patterns
+          CSV_FILE_FAA=$(ls data/planequery_aircraft/planequery_aircraft_faa_*_${DATE}.csv | head -1)
+          CSV_BASENAME_FAA=$(basename "$CSV_FILE_FAA")
+          CSV_FILE_ADSB=$(ls data/planequery_aircraft/planequery_aircraft_adsb_*_${DATE}.csv | head -1)
+          CSV_BASENAME_ADSB=$(basename "$CSV_FILE_ADSB")
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          echo "csv_file=$CSV_FILE" >> "$GITHUB_OUTPUT"
-          echo "csv_basename=$CSV_BASENAME" >> "$GITHUB_OUTPUT"
-          echo "name=planequery-aircraft snapshot ($DATE)" >> "$GITHUB_OUTPUT"
+          echo "csv_file_faa=$CSV_FILE_FAA" >> "$GITHUB_OUTPUT"
+          echo "csv_basename_faa=$CSV_BASENAME_FAA" >> "$GITHUB_OUTPUT"
+          echo "csv_file_adsb=$CSV_FILE_ADSB" >> "$GITHUB_OUTPUT"
+          echo "csv_basename_adsb=$CSV_BASENAME_ADSB" >> "$GITHUB_OUTPUT"
+          echo "name=planequery-aircraft snapshot ($DATE)${BRANCH_SUFFIX}" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release and upload assets
         uses: softprops/action-gh-release@v2
@@ -58,10 +101,12 @@ jobs:
             Automated daily snapshot generated at 06:00 UTC for ${{ steps.meta.outputs.date }}.
 
             Assets:
-            - ${{ steps.meta.outputs.csv_basename }}
+            - ${{ steps.meta.outputs.csv_basename_faa }}
+            - ${{ steps.meta.outputs.csv_basename_adsb }}
             - ReleasableAircraft_${{ steps.meta.outputs.date }}.zip
           files: |
-            ${{ steps.meta.outputs.csv_file }}
+            ${{ steps.meta.outputs.csv_file_faa }}
+            ${{ steps.meta.outputs.csv_file_adsb }}
             data/faa_releasable/ReleasableAircraft_${{ steps.meta.outputs.date }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
