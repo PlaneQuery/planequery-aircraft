@@ -38,9 +38,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           python -m src.contributions.approve_submission \
             --issue-number ${{ github.event.issue.number }} \
-            --issue-body "${{ github.event.issue.body }}" \
+            --issue-body "$ISSUE_BODY" \
             --author "${{ steps.author.outputs.username }}" \
             --author-id ${{ steps.author.outputs.user_id }}
