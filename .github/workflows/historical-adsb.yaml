@@ -48,7 +48,7 @@ jobs:
       matrix:
         chunk: ${{ fromJson(needs.generate-matrix.outputs.chunks) }}
       max-parallel: 3
-      fail-fast: false
+      fail-fast: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
