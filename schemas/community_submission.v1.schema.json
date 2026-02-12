@@ -54,7 +54,20 @@
       "additionalProperties": {
         "$ref": "#/$defs/tagValue"
       },
-      "properties": {}
+      "properties": {
+        "airshows": {
+          "type": "boolean"
+        },
+        "cat_friendly": {
+          "type": "boolean"
+        },
+        "dog_friendly": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
     }
   },
   "allOf": [
