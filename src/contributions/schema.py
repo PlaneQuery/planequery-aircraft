@@ -111,7 +111,7 @@ def download_github_attachment(url: str) -> str | None:
     import urllib.error
     
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "PlaneQuery-Bot"})
+        req = urllib.request.Request(url, headers={"User-Agent": "OpenAirframes-Bot"})
         with urllib.request.urlopen(req, timeout=30) as response:
             return response.read().decode("utf-8")
     except (urllib.error.URLError, urllib.error.HTTPError, UnicodeDecodeError) as e:

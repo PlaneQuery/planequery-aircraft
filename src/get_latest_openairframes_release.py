@@ -9,7 +9,7 @@ import urllib.error
 import json
 
 
-REPO = "PlaneQuery/planequery-aircraft"
+REPO = "PlaneQuery/openairframes"
 LATEST_RELEASE_URL = f"https://api.github.com/repos/{REPO}/releases/latest"
 
 
@@ -31,7 +31,7 @@ def get_latest_release_assets(repo: str = REPO, github_token: Optional[str] = No
     url = f"https://api.github.com/repos/{repo}/releases/latest"
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "planequery-aircraft-downloader/1.0",
+        "User-Agent": "openairframes-downloader/1.0",
     }
     if github_token:
         headers["Authorization"] = f"Bearer {github_token}"
@@ -80,7 +80,7 @@ def download_asset(asset: ReleaseAsset, out_path: Path, github_token: Optional[s
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     headers = {
-        "User-Agent": "planequery-aircraft-downloader/1.0",
+        "User-Agent": "openairframes-downloader/1.0",
         "Accept": "application/octet-stream",
     }
     if github_token:
@@ -109,7 +109,7 @@ def download_latest_aircraft_csv(
     repo: str = REPO,
 ) -> Path:
     """
-    Download the latest planequery_aircraft_faa_*.csv file from the latest GitHub release.
+    Download the latest openairframes_faa_*.csv file from the latest GitHub release.
 
     Args:
         output_dir: Directory to save the downloaded file (default: "downloads")
@@ -121,10 +121,10 @@ def download_latest_aircraft_csv(
     """
     assets = get_latest_release_assets(repo, github_token=github_token)
     try:
-        asset = pick_asset(assets, name_regex=r"^planequery_aircraft_faa_.*\.csv$")
+        asset = pick_asset(assets, name_regex=r"^openairframes_faa_.*\.csv$")
     except FileNotFoundError:
         # Fallback to old naming pattern
-        asset = pick_asset(assets, name_regex=r"^planequery_aircraft_\d{4}-\d{2}-\d{2}_.*\.csv$")
+        asset = pick_asset(assets, name_regex=r"^openairframes_\d{4}-\d{2}-\d{2}_.*\.csv$")
     saved_to = download_asset(asset, output_dir / asset.name, github_token=github_token)
     print(f"Downloaded: {asset.name} ({asset.size} bytes) -> {saved_to}")
     return saved_to
@@ -136,11 +136,11 @@ def get_latest_aircraft_faa_csv_df():
            'unique_regulatory_id': str, 
            'registrant_county': str})
     df = df.fillna("")
-    # Extract start date from filename pattern: planequery_aircraft_faa_{start_date}_{end_date}.csv
-    match = re.search(r"planequery_aircraft_faa_(\d{4}-\d{2}-\d{2})_", str(csv_path))
+    # Extract start date from filename pattern: openairframes_faa_{start_date}_{end_date}.csv
+    match = re.search(r"openairframes_faa_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:
-        # Fallback to old naming pattern: planequery_aircraft_{start_date}_{end_date}.csv
-        match = re.search(r"planequery_aircraft_(\d{4}-\d{2}-\d{2})_", str(csv_path))
+        # Fallback to old naming pattern: openairframes_{start_date}_{end_date}.csv
+        match = re.search(r"openairframes_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:
         raise ValueError(f"Could not extract date from filename: {csv_path.name}")
     
@@ -154,7 +154,7 @@ def download_latest_aircraft_adsb_csv(
     repo: str = REPO,
 ) -> Path:
     """
-    Download the latest planequery_aircraft_adsb_*.csv file from the latest GitHub release.
+    Download the latest openairframes_adsb_*.csv file from the latest GitHub release.
 
     Args:
         output_dir: Directory to save the downloaded file (default: "downloads")
@@ -165,7 +165,7 @@ def download_latest_aircraft_adsb_csv(
         Path to the downloaded file
     """
     assets = get_latest_release_assets(repo, github_token=github_token)
-    asset = pick_asset(assets, name_regex=r"^planequery_aircraft_adsb_.*\.csv$")
+    asset = pick_asset(assets, name_regex=r"^openairframes_adsb_.*\.csv$")
     saved_to = download_asset(asset, output_dir / asset.name, github_token=github_token)
     print(f"Downloaded: {asset.name} ({asset.size} bytes) -> {saved_to}")
     return saved_to
@@ -176,8 +176,8 @@ def get_latest_aircraft_adsb_csv_df():
     import pandas as pd
     df = pd.read_csv(csv_path)
     df = df.fillna("")
-    # Extract start date from filename pattern: planequery_aircraft_adsb_{start_date}_{end_date}.csv
-    match = re.search(r"planequery_aircraft_adsb_(\d{4}-\d{2}-\d{2})_", str(csv_path))
+    # Extract start date from filename pattern: openairframes_adsb_{start_date}_{end_date}.csv
+    match = re.search(r"openairframes_adsb_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:
         raise ValueError(f"Could not extract date from filename: {csv_path.name}")
     

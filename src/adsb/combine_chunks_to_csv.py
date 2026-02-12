@@ -27,7 +27,7 @@ from src.adsb.compress_adsb_to_aircraft_data import compress_multi_icao_df, COLU
 
 
 DEFAULT_CHUNK_DIR = os.path.join(OUTPUT_DIR, "adsb_chunks")
-FINAL_OUTPUT_DIR = "./data/planequery_aircraft"
+FINAL_OUTPUT_DIR = "./data/openairframes"
 os.makedirs(FINAL_OUTPUT_DIR, exist_ok=True)
 
 
@@ -85,12 +85,12 @@ def combine_compressed_chunks(compressed_dfs: list[pl.DataFrame]) -> pl.DataFram
 
 def download_and_merge_base_release(compressed_df: pl.DataFrame) -> pl.DataFrame:
     """Download base release and merge with new data."""
-    from src.get_latest_planequery_aircraft_release import download_latest_aircraft_adsb_csv
+    from src.get_latest_release import download_latest_aircraft_adsb_csv
     
     print("Downloading base ADS-B release...")
     try:
         base_path = download_latest_aircraft_adsb_csv(
-            output_dir="./data/planequery_aircraft_base"
+            output_dir="./data/openairframes_base"
         )
         print(f"Download returned: {base_path}")
         
@@ -176,7 +176,7 @@ def main():
     if args.start_date and args.end_date:
         # Historical mode
         output_id = f"{args.start_date}_{args.end_date}"
-        output_filename = f"planequery_aircraft_adsb_{args.start_date}_{args.end_date}.csv"
+        output_filename = f"openairframes_adsb_{args.start_date}_{args.end_date}.csv"
         print(f"Combining chunks for date range: {args.start_date} to {args.end_date}")
     else:
         # Daily mode - use same date for start and end
@@ -187,7 +187,7 @@ def main():
         
         date_str = target_day.strftime("%Y-%m-%d")
         output_id = date_str
-        output_filename = f"planequery_aircraft_adsb_{date_str}_{date_str}.csv"
+        output_filename = f"openairframes_adsb_{date_str}_{date_str}.csv"
         print(f"Combining chunks for {date_str}")
     
     chunks_dir = args.chunks_dir

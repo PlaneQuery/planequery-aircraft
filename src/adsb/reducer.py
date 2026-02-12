@@ -76,8 +76,8 @@ def main():
     print(f"After dedup: {df_accumulated.height} rows")
 
     # Write and upload final result
-    output_name = f"planequery_aircraft_adsb_{global_start}_{global_end}.csv.gz"
-    csv_output = Path(f"/tmp/planequery_aircraft_adsb_{global_start}_{global_end}.csv")
+    output_name = f"openairframes_adsb_{global_start}_{global_end}.csv.gz"
+    csv_output = Path(f"/tmp/openairframes_adsb_{global_start}_{global_end}.csv")
     gz_output = Path(f"/tmp/{output_name}")
     
     df_accumulated.write_csv(csv_output)

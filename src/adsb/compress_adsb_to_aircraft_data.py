@@ -253,7 +253,7 @@ def concat_compressed_dfs(df_base, df_new):
 
 def get_latest_aircraft_adsb_csv_df():
     """Download and load the latest ADS-B CSV from GitHub releases."""
-    from get_latest_planequery_aircraft_release import download_latest_aircraft_adsb_csv
+    from get_latest_release import download_latest_aircraft_adsb_csv
     import re
     
     csv_path = download_latest_aircraft_adsb_csv()
@@ -264,8 +264,8 @@ def get_latest_aircraft_adsb_csv_df():
         if df[col].dtype == pl.Utf8:
             df = df.with_columns(pl.col(col).fill_null(""))
     
-    # Extract start date from filename pattern: planequery_aircraft_adsb_{start_date}_{end_date}.csv
-    match = re.search(r"planequery_aircraft_adsb_(\d{4}-\d{2}-\d{2})_", str(csv_path))
+    # Extract start date from filename pattern: openairframes_adsb_{start_date}_{end_date}.csv
+    match = re.search(r"openairframes_adsb_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:
         raise ValueError(f"Could not extract date from filename: {csv_path.name}")
     

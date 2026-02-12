@@ -23,7 +23,7 @@ class AdsbProcessingStack(Stack):
         # --- S3 bucket for intermediate and final results ---
         bucket = s3.Bucket(
             self, "ResultsBucket",
-            bucket_name="planequery-aircraft-dev",
+            bucket_name="openairframes-dev",
             removal_policy=RemovalPolicy.DESTROY,
             auto_delete_objects=True,
             lifecycle_rules=[

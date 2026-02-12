@@ -1,4 +1,4 @@
-name: planequery-aircraft Daily Release
+name: OpenAirframes Daily Release
 
 on:
   schedule:
@@ -22,7 +22,7 @@ jobs:
             await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'planequery-aircraft-daily-release.yaml',
+              workflow_id: 'openairframes-daily-release.yaml',
               ref: 'main'
             });
       
@@ -33,7 +33,7 @@ jobs:
             await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'planequery-aircraft-daily-release.yaml',
+              workflow_id: 'openairframes-daily-release.yaml',
               ref: 'develop'
             });
 
@@ -58,16 +58,16 @@ jobs:
 
       - name: Run FAA release script
         run: |
-          python src/create_daily_planequery_aircraft_faa_release.py
+          python src/create_daily_faa_release.py
           ls -lah data/faa_releasable
-          ls -lah data/planequery_aircraft
+          ls -lah data/openairframes
 
       - name: Upload FAA artifacts
         uses: actions/upload-artifact@v4
         with:
           name: faa-release
           path: |
-            data/planequery_aircraft/planequery_aircraft_faa_*.csv
+            data/openairframes/openairframes_faa_*.csv
             data/faa_releasable/ReleasableAircraft_*.zip
           retention-days: 1
 
@@ -214,13 +214,13 @@ jobs:
           mkdir -p data/output/adsb_chunks
           ls -lah data/output/adsb_chunks/ || echo "Directory empty or does not exist"
           python -m src.adsb.combine_chunks_to_csv --chunks-dir data/output/adsb_chunks
-          ls -lah data/planequery_aircraft/
+          ls -lah data/openairframes/
 
       - name: Upload ADS-B artifacts
         uses: actions/upload-artifact@v4
         with:
           name: adsb-release
-          path: data/planequery_aircraft/planequery_aircraft_adsb_*.csv
+          path: data/openairframes/openairframes_adsb_*.csv
           retention-days: 1
 
   build-community:
@@ -245,13 +245,13 @@ jobs:
       - name: Run Community release script
         run: |
           python -m src.contributions.create_daily_community_release
-          ls -lah data/planequery_aircraft
+          ls -lah data/openairframes
 
       - name: Upload Community artifacts
         uses: actions/upload-artifact@v4
         with:
           name: community-release
-          path: data/planequery_aircraft/planequery_aircraft_community_*.csv
+          path: data/openairframes/openairframes_community_*.csv
           retention-days: 1
 
   create-release:
@@ -297,14 +297,14 @@ jobs:
           elif [ "$BRANCH_NAME" = "develop" ]; then
             BRANCH_SUFFIX="-develop"
           fi
-          TAG="planequery-aircraft-${DATE}${BRANCH_SUFFIX}"
+          TAG="openairframes-${DATE}${BRANCH_SUFFIX}"
           
           # Find files from artifacts using find (handles nested structures)
-          CSV_FILE_FAA=$(find artifacts/faa -name "planequery_aircraft_faa_*.csv" | head -1)
+          CSV_FILE_FAA=$(find artifacts/faa -name "openairframes_faa_*.csv" | head -1)
           CSV_BASENAME_FAA=$(basename "$CSV_FILE_FAA")
-          CSV_FILE_ADSB=$(find artifacts/adsb -name "planequery_aircraft_adsb_*.csv" | head -1)
+          CSV_FILE_ADSB=$(find artifacts/adsb -name "openairframes_adsb_*.csv" | head -1)
           CSV_BASENAME_ADSB=$(basename "$CSV_FILE_ADSB")
-          CSV_FILE_COMMUNITY=$(find artifacts/community -name "planequery_aircraft_community_*.csv" 2>/dev/null | head -1 || echo "")
+          CSV_FILE_COMMUNITY=$(find artifacts/community -name "openairframes_community_*.csv" 2>/dev/null | head -1 || echo "")
           CSV_BASENAME_COMMUNITY=$(basename "$CSV_FILE_COMMUNITY" 2>/dev/null || echo "")
           ZIP_FILE=$(find artifacts/faa -name "ReleasableAircraft_*.zip" | head -1)
           ZIP_BASENAME=$(basename "$ZIP_FILE")
@@ -319,7 +319,7 @@ jobs:
           echo "csv_basename_community=$CSV_BASENAME_COMMUNITY" >> "$GITHUB_OUTPUT"
           echo "zip_file=$ZIP_FILE" >> "$GITHUB_OUTPUT"
           echo "zip_basename=$ZIP_BASENAME" >> "$GITHUB_OUTPUT"
-          echo "name=planequery-aircraft snapshot ($DATE)${BRANCH_SUFFIX}" >> "$GITHUB_OUTPUT"
+          echo "name=OpenAirframes snapshot ($DATE)${BRANCH_SUFFIX}" >> "$GITHUB_OUTPUT"
 
       - name: Checkout for gh CLI
         uses: actions/checkout@v4

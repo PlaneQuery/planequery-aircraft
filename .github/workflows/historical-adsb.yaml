@@ -220,11 +220,11 @@ jobs:
           END_DATE: ${{ needs.generate-matrix.outputs.global_end }}
         run: |
           python -m src.adsb.combine_chunks_to_csv --chunks-dir data/output/adsb_chunks --start-date "$START_DATE" --end-date "$END_DATE" --skip-base --stream
-          ls -lah data/planequery_aircraft/
+          ls -lah data/openairframes/
 
       - name: Upload final artifact
         uses: actions/upload-artifact@v4
         with:
-          name: planequery_aircraft_adsb-${{ needs.generate-matrix.outputs.global_start }}-${{ needs.generate-matrix.outputs.global_end }}
-          path: data/planequery_aircraft/*.csv
+          name: openairframes_adsb-${{ needs.generate-matrix.outputs.global_start }}-${{ needs.generate-matrix.outputs.global_end }}
+          path: data/openairframes/*.csv
           retention-days: 30
