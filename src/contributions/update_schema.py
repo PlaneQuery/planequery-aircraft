@@ -58,18 +58,9 @@ def generate_updated_schema(base_schema: dict, tag_registry: dict[str, str]) -> 
     for tag_name, type_name in sorted(tag_registry.items()):
         tag_properties[tag_name] = type_name_to_json_schema(type_name)
     
-    # Update tags definition
-    schema["properties"]["tags"] = {
-        "type": "object",
-        "description": "Community-defined tags. New tags can be added, but must use consistent types.",
-        "propertyNames": {
-            "type": "string",
-            "pattern": "^[a-z][a-z0-9_]{0,63}$"
-        },
-        "properties": tag_properties,
-        # Still allow additional properties for new tags
-        "additionalProperties": {"$ref": "#/$defs/tagValue"}
-    }
+    # Only add/update the properties key within tags, preserve everything else
+    if "properties" in schema and "tags" in schema["properties"]:
+        schema["properties"]["tags"]["properties"] = tag_properties
     
     return schema
 
