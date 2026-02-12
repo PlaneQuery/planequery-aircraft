@@ -188,17 +188,19 @@ jobs:
 
       - name: Debug downloaded files
         run: |
+          echo "=== Disk space before processing ==="
+          df -h
           echo "=== Listing data/output/adsb_chunks/ ==="
-          find data/output/adsb_chunks/ -type f 2>/dev/null | head -50 || echo "No files found"
-          echo "=== Looking for parquet files ==="
-          find . -name "*.parquet" 2>/dev/null | head -20 || echo "No parquet files found"
+          find data/output/adsb_chunks/ -type f 2>/dev/null | wc -l
+          echo "=== Total parquet size ==="
+          du -sh data/output/adsb_chunks/ || echo "No chunks dir"
 
       - name: Combine chunks to CSV
         env:
           START_DATE: ${{ needs.generate-matrix.outputs.global_start }}
           END_DATE: ${{ needs.generate-matrix.outputs.global_end }}
         run: |
-          python -m src.adsb.combine_chunks_to_csv --chunks-dir data/output/adsb_chunks --start-date "$START_DATE" --end-date "$END_DATE" --skip-base
+          python -m src.adsb.combine_chunks_to_csv --chunks-dir data/output/adsb_chunks --start-date "$START_DATE" --end-date "$END_DATE" --skip-base --stream
           ls -lah data/planequery_aircraft/
 
       - name: Upload final artifact
