@@ -82,7 +82,8 @@ def fetch_releases(version_date: str) -> list:
     if version_date == "v2024.12.31":
         year = "2025"
     BASE_URL = f"https://api.github.com/repos/adsblol/globe_history_{year}/releases"
-    PATTERN = f"{version_date}-planes-readsb-prod-0"
+    # Match exact release name, exclude tmp releases
+    PATTERN = rf"^{re.escape(version_date)}-planes-readsb-prod-\d+$"
     releases = []
     page = 1
     
@@ -187,18 +188,22 @@ def extract_split_archive(file_paths: list, extract_dir: str) -> bool:
         cat_proc = subprocess.Popen(
             ["cat"] + file_paths,
             stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL
+            stderr=subprocess.PIPE
         )
         tar_cmd = ["tar", "xf", "-", "-C", extract_dir, "--strip-components=1"]
-        subprocess.run(
+        result = subprocess.run(
             tar_cmd,
             stdin=cat_proc.stdout,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             check=True
         )
         cat_proc.stdout.close()
+        cat_stderr = cat_proc.stderr.read().decode() if cat_proc.stderr else ""
         cat_proc.wait()
+        
+        if cat_stderr:
+            print(f"cat stderr: {cat_stderr}")
         
         print(f"Successfully extracted archive to {extract_dir}")
         
@@ -217,7 +222,10 @@ def extract_split_archive(file_paths: list, extract_dir: str) -> bool:
         
         return True
     except subprocess.CalledProcessError as e:
+        stderr_output = e.stderr.decode() if e.stderr else ""
         print(f"Failed to extract split archive: {e}")
+        if stderr_output:
+            print(f"tar stderr: {stderr_output}")
         return False
 
 
