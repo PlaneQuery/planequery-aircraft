@@ -299,14 +299,14 @@ jobs:
           fi
           TAG="planequery-aircraft-${DATE}${BRANCH_SUFFIX}"
           
-          # Find files from artifacts
-          CSV_FILE_FAA=$(ls artifacts/faa/data/planequery_aircraft/planequery_aircraft_faa_*.csv | head -1)
+          # Find files from artifacts using find (handles nested structures)
+          CSV_FILE_FAA=$(find artifacts/faa -name "planequery_aircraft_faa_*.csv" | head -1)
           CSV_BASENAME_FAA=$(basename "$CSV_FILE_FAA")
-          CSV_FILE_ADSB=$(ls artifacts/adsb/planequery_aircraft_adsb_*.csv | head -1)
+          CSV_FILE_ADSB=$(find artifacts/adsb -name "planequery_aircraft_adsb_*.csv" | head -1)
           CSV_BASENAME_ADSB=$(basename "$CSV_FILE_ADSB")
-          CSV_FILE_COMMUNITY=$(ls artifacts/community/planequery_aircraft_community_*.csv 2>/dev/null | head -1 || echo "")
+          CSV_FILE_COMMUNITY=$(find artifacts/community -name "planequery_aircraft_community_*.csv" 2>/dev/null | head -1 || echo "")
           CSV_BASENAME_COMMUNITY=$(basename "$CSV_FILE_COMMUNITY" 2>/dev/null || echo "")
-          ZIP_FILE=$(ls artifacts/faa/data/faa_releasable/ReleasableAircraft_*.zip | head -1)
+          ZIP_FILE=$(find artifacts/faa -name "ReleasableAircraft_*.zip" | head -1)
           ZIP_BASENAME=$(basename "$ZIP_FILE")
           
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
