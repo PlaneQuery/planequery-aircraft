@@ -177,7 +177,7 @@ def process_submission(
     content_json = json.dumps(submissions, indent=2, sort_keys=True)
     content_hash = compute_content_hash(content_json)
     filename = generate_submission_filename(author_username, date_str, content_hash)
-    file_path = f"community/{filename}"
+    file_path = f"community/{date_str}/{filename}"
     
     # Create branch
     branch_name = f"community-submission-{issue_number}"
