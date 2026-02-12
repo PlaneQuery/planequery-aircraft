@@ -1,0 +1,14 @@
+[
+  {
+    "contributor_name": "hellohello",
+    "contributor_uuid": "2981c3ee-8712-5f96-84bf-732eda515a3f",
+    "creation_timestamp": "2026-02-12T21:02:32.325360+00:00",
+    "registration_number": "N12345",
+    "tags": {
+      "airshows": true,
+      "cat_friendly": false,
+      "dog_friendly": true,
+      "notes": "is a pet carrier"
+    }
+  }
+]
