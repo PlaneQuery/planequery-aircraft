@@ -36,6 +36,19 @@
       "readOnly": true
     },
 
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Optional start date for when this submission's tags are valid (ISO 8601, e.g., 2025-05-01)."
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Optional end date for when this submission's tags are valid (ISO 8601, e.g., 2025-07-03)."
+    },
+
     "tags": {
       "type": "object",
       "description": "Additional community-defined tags as key/value pairs (values may be scalar, array, or object).",
