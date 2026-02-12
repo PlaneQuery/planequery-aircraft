@@ -1,0 +1,89 @@
+name: Community submission (JSON)
+description: Submit one or more community records (JSON) to be reviewed and approved.
+title: "Community submission: "
+labels:
+  - community
+  - submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit **one object** or an **array of objects** that matches the community submission schema.
+
+        **Rules (enforced on review/automation):**
+        - Each object must include **at least one** of:
+          - `registration_number`
+          - `transponder_code_hex` (6 hex chars)
+          - `planequery_airframe_id`
+        - Your contributor name (entered below) will be applied to all objects.
+        - `contributor_uuid` is derived from your GitHub account automatically.
+        - `creation_timestamp` is created by the system (you may omit it).
+
+        **Example: single object**
+        ```json
+        {
+          "transponder_code_hex": "a1b2c3"
+        }
+        ```
+
+        **Example: multiple objects (array)**
+        ```json
+        [
+          {
+            "registration_number": "N123AB"
+          },
+          {
+            "planequery_airframe_id": "cessna|172s|12345",
+            "transponder_code_hex": "0f1234"
+          }
+        ]
+        ```
+
+  - type: input
+    id: contributor_name
+    attributes:
+      label: Contributor Name
+      description: Your display name for attribution. Leave blank to use your GitHub username. Max 150 characters.
+      placeholder: "e.g., JamesBerry.com or leave blank"
+    validations:
+      required: false
+
+  - type: textarea
+    id: submission_json
+    attributes:
+      label: Submission JSON
+      description: Paste either one JSON object or an array of JSON objects. Must be valid JSON. Do not include contributor_name or contributor_uuid in your JSON.
+      placeholder: |
+        Paste JSON here...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: submission_type
+    attributes:
+      label: What did you submit?
+      options:
+        - Single object
+        - Multiple objects (array)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: "I confirm this is valid JSON (not JSONL) and matches the field names exactly."
+          required: true
+        - label: "I confirm `transponder_code_hex` values (if provided) are 6 hex characters."
+          required: true
+        - label: "I understand submissions are reviewed and may be rejected or require changes."
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any context, sources, or links that help validate your submission.
+    validations:
+      required: false

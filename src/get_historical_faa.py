@@ -112,5 +112,5 @@ for date, sha in date_to_sha.items():
     print(len(df_base), "total entries so far")
 
 assert df_base['download_date'].is_monotonic_increasing, "download_date is not monotonic increasing"
-df_base.to_csv(OUT_ROOT / f"planequery_aircraft_{start_date}_{end_date}.csv", index=False)
+df_base.to_csv(OUT_ROOT / f"planequery_aircraft_faa_{start_date}_{end_date}.csv", index=False)
 # TODO: get average number of new rows per day.

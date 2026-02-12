@@ -2,52 +2,314 @@ name: planequery-aircraft Daily Release
 
 on:
   schedule:
-    # 6:00pm UTC every day
+    # 6:00pm UTC every day - runs on default branch, triggers both
     - cron: "0 06 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build-and-release:
+  trigger-releases:
     runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Trigger main branch release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'planequery-aircraft-daily-release.yaml',
+              ref: 'main'
+            });
+      
+      - name: Trigger develop branch release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'planequery-aircraft-daily-release.yaml',
+              ref: 'develop'
+            });
 
+  build-faa:
+    runs-on: ubuntu-24.04-arm
+    if: github.event_name != 'schedule'
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.14"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run daily release script
+      - name: Run FAA release script
         run: |
           python src/create_daily_planequery_aircraft_release.py
           ls -lah data/faa_releasable
           ls -lah data/planequery_aircraft
 
+      - name: Upload FAA artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: faa-release
+          path: |
+            data/planequery_aircraft/planequery_aircraft_faa_*.csv
+            data/faa_releasable/ReleasableAircraft_*.zip
+          retention-days: 1
+
+  adsb-extract:
+    runs-on: ubuntu-24.04-arm
+    if: github.event_name != 'schedule'
+    outputs:
+      manifest-exists: ${{ steps.check.outputs.exists }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download and extract ADS-B data
+        run: |
+          python -m src.adsb.download_and_list_icaos
+          ls -lah data/output/
+
+      - name: Check manifest exists
+        id: check
+        run: |
+          if ls data/output/icao_manifest_*.txt 1>/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create tar of extracted data
+        run: |
+          cd data/output
+          tar -cf extracted_data.tar *-planes-readsb-prod-0.tar_0 icao_manifest_*.txt
+          ls -lah extracted_data.tar
+
+      - name: Upload extracted data
+        uses: actions/upload-artifact@v4
+        with:
+          name: adsb-extracted
+          path: data/output/extracted_data.tar
+          retention-days: 1
+          compression-level: 0  # Already compressed trace files
+
+  adsb-map:
+    runs-on: ubuntu-24.04-arm
+    needs: adsb-extract
+    if: github.event_name != 'schedule' && needs.adsb-extract.outputs.manifest-exists == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0, 1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download extracted data
+        uses: actions/download-artifact@v4
+        with:
+          name: adsb-extracted
+          path: data/output/
+
+      - name: Extract tar
+        run: |
+          cd data/output
+          tar -xf extracted_data.tar
+          rm extracted_data.tar
+          echo "=== Contents of data/output ==="
+          ls -lah
+          echo "=== Looking for manifest ==="
+          cat icao_manifest_*.txt | head -20 || echo "No manifest found"
+          echo "=== Looking for extracted dirs ==="
+          ls -d *-planes-readsb-prod-0* 2>/dev/null || echo "No extracted dirs"
+
+      - name: Process chunk ${{ matrix.chunk }}
+        run: |
+          python -m src.adsb.process_icao_chunk --chunk-id ${{ matrix.chunk }} --total-chunks 4
+          mkdir -p data/output/adsb_chunks
+          ls -lah data/output/adsb_chunks/ || echo "No chunks created"
+
+      - name: Upload chunk artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: adsb-chunk-${{ matrix.chunk }}
+          path: data/output/adsb_chunks/
+          retention-days: 1
+
+  adsb-reduce:
+    runs-on: ubuntu-24.04-arm
+    needs: adsb-map
+    if: github.event_name != 'schedule'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download all chunk artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: adsb-chunk-*
+          path: data/output/adsb_chunks/
+          merge-multiple: true
+
+      - name: Debug downloaded files
+        run: |
+          echo "=== Listing data/ ==="
+          find data/ -type f 2>/dev/null | head -50 || echo "No files in data/"
+          echo "=== Looking for parquet files ==="
+          find . -name "*.parquet" 2>/dev/null | head -20 || echo "No parquet files found"
+
+      - name: Combine chunks to CSV
+        run: |
+          mkdir -p data/output/adsb_chunks
+          ls -lah data/output/adsb_chunks/ || echo "Directory empty or does not exist"
+          python -m src.adsb.combine_chunks_to_csv --chunks-dir data/output/adsb_chunks
+          ls -lah data/planequery_aircraft/
+
+      - name: Upload ADS-B artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: adsb-release
+          path: data/planequery_aircraft/planequery_aircraft_adsb_*.csv
+          retention-days: 1
+
+  build-community:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'schedule'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+
+      - name: Run Community release script
+        run: |
+          python -m src.contributions.create_daily_community_release
+          ls -lah data/planequery_aircraft
+
+      - name: Upload Community artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: community-release
+          path: data/planequery_aircraft/planequery_aircraft_community_*.csv
+          retention-days: 1
+
+  create-release:
+    runs-on: ubuntu-latest
+    needs: [build-faa, adsb-reduce, build-community]
+    if: github.event_name != 'schedule'
+    steps:
+      - name: Download FAA artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: faa-release
+          path: artifacts/faa
+
+      - name: Download ADS-B artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: adsb-release
+          path: artifacts/adsb
+
+      - name: Download Community artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: community-release
+          path: artifacts/community
+
       - name: Prepare release metadata
         id: meta
         run: |
           DATE=$(date -u +"%Y-%m-%d")
-          TAG="planequery-aircraft-${DATE}"
-          # Find the CSV file in data/planequery_aircraft matching the pattern
-          CSV_FILE=$(ls data/planequery_aircraft/planequery_aircraft_*_${DATE}.csv | head -1)
-          CSV_BASENAME=$(basename "$CSV_FILE")
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          BRANCH_SUFFIX=""
+          if [ "$BRANCH_NAME" = "main" ]; then
+            BRANCH_SUFFIX="-main"
+          elif [ "$BRANCH_NAME" = "develop" ]; then
+            BRANCH_SUFFIX="-develop"
+          fi
+          TAG="planequery-aircraft-${DATE}${BRANCH_SUFFIX}"
+          
+          # Find files from artifacts
+          CSV_FILE_FAA=$(ls artifacts/faa/data/planequery_aircraft/planequery_aircraft_faa_*.csv | head -1)
+          CSV_BASENAME_FAA=$(basename "$CSV_FILE_FAA")
+          CSV_FILE_ADSB=$(ls artifacts/adsb/planequery_aircraft_adsb_*.csv | head -1)
+          CSV_BASENAME_ADSB=$(basename "$CSV_FILE_ADSB")
+          CSV_FILE_COMMUNITY=$(ls artifacts/community/planequery_aircraft_community_*.csv 2>/dev/null | head -1 || echo "")
+          CSV_BASENAME_COMMUNITY=$(basename "$CSV_FILE_COMMUNITY" 2>/dev/null || echo "")
+          ZIP_FILE=$(ls artifacts/faa/data/faa_releasable/ReleasableAircraft_*.zip | head -1)
+          ZIP_BASENAME=$(basename "$ZIP_FILE")
+          
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          echo "csv_file=$CSV_FILE" >> "$GITHUB_OUTPUT"
-          echo "csv_basename=$CSV_BASENAME" >> "$GITHUB_OUTPUT"
-          echo "name=planequery-aircraft snapshot ($DATE)" >> "$GITHUB_OUTPUT"
+          echo "csv_file_faa=$CSV_FILE_FAA" >> "$GITHUB_OUTPUT"
+          echo "csv_basename_faa=$CSV_BASENAME_FAA" >> "$GITHUB_OUTPUT"
+          echo "csv_file_adsb=$CSV_FILE_ADSB" >> "$GITHUB_OUTPUT"
+          echo "csv_basename_adsb=$CSV_BASENAME_ADSB" >> "$GITHUB_OUTPUT"
+          echo "csv_file_community=$CSV_FILE_COMMUNITY" >> "$GITHUB_OUTPUT"
+          echo "csv_basename_community=$CSV_BASENAME_COMMUNITY" >> "$GITHUB_OUTPUT"
+          echo "zip_file=$ZIP_FILE" >> "$GITHUB_OUTPUT"
+          echo "zip_basename=$ZIP_BASENAME" >> "$GITHUB_OUTPUT"
+          echo "name=planequery-aircraft snapshot ($DATE)${BRANCH_SUFFIX}" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release and upload assets
         uses: softprops/action-gh-release@v2
@@ -58,10 +320,14 @@ jobs:
             Automated daily snapshot generated at 06:00 UTC for ${{ steps.meta.outputs.date }}.
 
             Assets:
-            - ${{ steps.meta.outputs.csv_basename }}
-            - ReleasableAircraft_${{ steps.meta.outputs.date }}.zip
+            - ${{ steps.meta.outputs.csv_basename_faa }}
+            - ${{ steps.meta.outputs.csv_basename_adsb }}
+            - ${{ steps.meta.outputs.csv_basename_community }}
+            - ${{ steps.meta.outputs.zip_basename }}
           files: |
-            ${{ steps.meta.outputs.csv_file }}
-            data/faa_releasable/ReleasableAircraft_${{ steps.meta.outputs.date }}.zip
+            ${{ steps.meta.outputs.csv_file_faa }}
+            ${{ steps.meta.outputs.csv_file_adsb }}
+            ${{ steps.meta.outputs.csv_file_community }}
+            ${{ steps.meta.outputs.zip_file }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

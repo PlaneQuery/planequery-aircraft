@@ -25,9 +25,9 @@ if not zip_path.exists():
 OUT_ROOT = Path("data/planequery_aircraft")
 OUT_ROOT.mkdir(parents=True, exist_ok=True)
 from derive_from_faa_master_txt import convert_faa_master_txt_to_df, concat_faa_historical_df
-from get_latest_planequery_aircraft_release import get_latest_aircraft_csv_df
+from get_latest_planequery_aircraft_release import get_latest_aircraft_faa_csv_df
 df_new = convert_faa_master_txt_to_df(zip_path, date_str)
-df_base, start_date_str = get_latest_aircraft_csv_df()
+df_base, start_date_str = get_latest_aircraft_faa_csv_df()
 df_base = concat_faa_historical_df(df_base, df_new)
 assert df_base['download_date'].is_monotonic_increasing, "download_date is not monotonic increasing"
-df_base.to_csv(OUT_ROOT / f"planequery_aircraft_{start_date_str}_{date_str}.csv", index=False)
+df_base.to_csv(OUT_ROOT / f"planequery_aircraft_faa_{start_date_str}_{date_str}.csv", index=False)

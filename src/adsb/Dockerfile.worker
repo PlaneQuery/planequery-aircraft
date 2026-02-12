@@ -1,0 +1,12 @@
+FROM --platform=linux/arm64 python:3.12-slim
+
+WORKDIR /app
+
+COPY requirements.worker.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY compress_adsb_to_aircraft_data.py .
+COPY download_adsb_data_to_parquet.py .
+COPY worker.py .
+
+CMD ["python", "-u", "worker.py"]

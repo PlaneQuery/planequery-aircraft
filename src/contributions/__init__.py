@@ -1,0 +1,1 @@
+"""Community contributions processing module."""
