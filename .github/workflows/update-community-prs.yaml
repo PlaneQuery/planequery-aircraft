@@ -48,28 +48,52 @@ jobs:
             git fetch origin "$branch_name"
             git checkout "$branch_name"
             
-            # Merge main into PR branch
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             
-            if git merge origin/main -m "Merge main to update schema"; then
-              # Regenerate schema for this PR's submission (adds any new tags)
-              python -m src.contributions.regenerate_pr_schema || true
-              
-              # If there are changes, commit and push
-              if [ -n "$(git status --porcelain schemas/)" ]; then
-                git add schemas/
-                git commit -m "Update schema with new tags"
-                git push origin "$branch_name"
-                echo "  Updated PR #$pr_number with schema changes"
-              else
-                git push origin "$branch_name"
-                echo "  Merged main into PR #$pr_number"
+            # Get the community submission file(s) and schema from this branch
+            community_files=$(git diff --name-only origin/main...HEAD -- 'community/' 'schemas/')
+            
+            if [ -z "$community_files" ]; then
+              echo "  No community/schema files found in PR #$pr_number, skipping"
+              git checkout main
+              continue
+            fi
+            
+            echo "  Files to preserve: $community_files"
+            
+            # Save the community files content
+            mkdir -p /tmp/pr_files
+            for file in $community_files; do
+              if [ -f "$file" ]; then
+                mkdir -p "/tmp/pr_files/$(dirname "$file")"
+                cp "$file" "/tmp/pr_files/$file"
               fi
+            done
+            
+            # Reset branch to main (clean slate)
+            git reset --hard origin/main
+            
+            # Restore the community files
+            for file in $community_files; do
+              if [ -f "/tmp/pr_files/$file" ]; then
+                mkdir -p "$(dirname "$file")"
+                cp "/tmp/pr_files/$file" "$file"
+              fi
+            done
+            rm -rf /tmp/pr_files
+            
+            # Regenerate schema with current main + this submission's tags
+            python -m src.contributions.regenerate_pr_schema || true
+            
+            # Stage and commit all changes
+            git add community/ schemas/
+            if ! git diff --cached --quiet; then
+              git commit -m "Community submission (rebased on main)"
+              git push --force origin "$branch_name"
+              echo "  Rebased PR #$pr_number onto main"
             else
-              echo "  Merge conflict in PR #$pr_number, adding comment"
-              gh pr comment "$pr_number" --body $'⚠️ **Merge Conflict**\n\nAnother community submission was merged and this PR has conflicts.\n\nA maintainer may need to:\n1. Close this PR\n2. Remove the `approved` label from the original issue\n3. Re-add the `approved` label to regenerate the PR'
-              git merge --abort
+              echo "  No changes needed for PR #$pr_number"
             fi
             
             git checkout main
