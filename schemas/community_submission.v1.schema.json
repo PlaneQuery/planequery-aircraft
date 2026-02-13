@@ -54,7 +54,14 @@
       "additionalProperties": {
         "$ref": "#/$defs/tagValue"
       },
-      "properties": {}
+      "properties": {
+        "internet": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        }
+      }
     }
   },
   "allOf": [
