@@ -9,12 +9,17 @@ from __future__ import annotations
 
 import argparse
 import shutil
+import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 URL = "https://www.mictronics.de/aircraft-database/indexedDB_old.php"
 OUT_ROOT = Path("data/openairframes")
+MAX_RETRIES = 3
+RETRY_DELAY = 30  # seconds
 
 
 def main() -> None:
@@ -28,12 +33,22 @@ def main() -> None:
 
     zip_path = OUT_ROOT / f"mictronics-db_{date_str}.zip"
 
-    print(f"Downloading {URL}...")
-    req = Request(URL, headers={"User-Agent": "openairframes-downloader/1.0"}, method="GET")
-    with urlopen(req, timeout=300) as r, zip_path.open("wb") as f:
-        shutil.copyfileobj(r, f)
-
-    print(f"Wrote: {zip_path}")
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            print(f"Downloading {URL} (attempt {attempt}/{MAX_RETRIES})...")
+            req = Request(URL, headers={"User-Agent": "Mozilla/5.0 (compatible; openairframes-downloader/1.0)"}, method="GET")
+            with urlopen(req, timeout=120) as r, zip_path.open("wb") as f:
+                shutil.copyfileobj(r, f)
+            print(f"Wrote: {zip_path}")
+            return
+        except (URLError, TimeoutError) as e:
+            print(f"Attempt {attempt} failed: {e}")
+            if attempt < MAX_RETRIES:
+                print(f"Retrying in {RETRY_DELAY} seconds...")
+                time.sleep(RETRY_DELAY)
+            else:
+                print("All retries exhausted. Mictronics download failed.")
+                sys.exit(1)
 
 
 if __name__ == "__main__":
