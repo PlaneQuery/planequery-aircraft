@@ -259,10 +259,17 @@ def main():
     if 'time' in combined.columns:
         combined = combined.sort('time')
     
+    # Replace empty strings with null across all string columns to avoid quoted empty strings
+    for col in combined.columns:
+        if combined[col].dtype == pl.Utf8:
+            combined = combined.with_columns(
+                pl.when(pl.col(col) == "").then(None).otherwise(pl.col(col)).alias(col)
+            )
+    
     # Write final CSV
     output_path = os.path.join(FINAL_OUTPUT_DIR, output_filename)
-    with gzip.open(output_path, "wb") as f:
-        combined.write_csv(f)
+    with gzip.open(output_path, "wb", compresslevel=9) as f:
+        combined.write_csv(f, null_value='', quote_style='necessary')
     print(f"Wrote {len(combined)} records to {output_path}")
     
     # Cleanup
