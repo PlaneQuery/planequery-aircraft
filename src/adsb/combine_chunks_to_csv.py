@@ -18,7 +18,7 @@ import os
 import sys
 import glob
 import argparse
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import polars as pl
 
@@ -33,7 +33,7 @@ os.makedirs(FINAL_OUTPUT_DIR, exist_ok=True)
 
 def get_target_day() -> datetime:
     """Get yesterday's date (the day we're processing)."""
-    return datetime.utcnow() - timedelta(days=1)
+    return datetime.now(timezone.utc) - timedelta(days=1)
 
 
 def process_single_chunk(chunk_path: str, delete_after_load: bool = False) -> pl.DataFrame:
@@ -236,7 +236,8 @@ def main():
     
     # Write final CSV
     output_path = os.path.join(FINAL_OUTPUT_DIR, output_filename)
-    combined.write_csv(output_path)
+    with open(output_path, "wb") as f:
+        combined.write_csv(f)
     print(f"Wrote {len(combined)} records to {output_path}")
     
     # Cleanup

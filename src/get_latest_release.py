@@ -119,6 +119,7 @@ def download_latest_aircraft_csv(
     Returns:
         Path to the downloaded file
     """
+    output_dir = Path(output_dir)
     assets = get_latest_release_assets(repo, github_token=github_token)
     try:
         asset = pick_asset(assets, name_regex=r"^openairframes_faa_.*\.csv$")
@@ -164,6 +165,7 @@ def download_latest_aircraft_adsb_csv(
     Returns:
         Path to the downloaded file
     """
+    output_dir = Path(output_dir)
     assets = get_latest_release_assets(repo, github_token=github_token)
     asset = pick_asset(assets, name_regex=r"^openairframes_adsb_.*\.csv(\.gz)?$")
     saved_to = download_asset(asset, output_dir / asset.name, github_token=github_token)
