@@ -165,7 +165,7 @@ def download_latest_aircraft_adsb_csv(
         Path to the downloaded file
     """
     assets = get_latest_release_assets(repo, github_token=github_token)
-    asset = pick_asset(assets, name_regex=r"^openairframes_adsb_.*\.csv$")
+    asset = pick_asset(assets, name_regex=r"^openairframes_adsb_.*\.csv(\.gz)?$")
     saved_to = download_asset(asset, output_dir / asset.name, github_token=github_token)
     print(f"Downloaded: {asset.name} ({asset.size} bytes) -> {saved_to}")
     return saved_to
@@ -176,7 +176,7 @@ def get_latest_aircraft_adsb_csv_df():
     import pandas as pd
     df = pd.read_csv(csv_path)
     df = df.fillna("")
-    # Extract start date from filename pattern: openairframes_adsb_{start_date}_{end_date}.csv
+    # Extract start date from filename pattern: openairframes_adsb_{start_date}_{end_date}.csv[.gz]
     match = re.search(r"openairframes_adsb_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:
         raise ValueError(f"Could not extract date from filename: {csv_path.name}")

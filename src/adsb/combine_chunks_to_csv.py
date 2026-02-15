@@ -176,7 +176,7 @@ def main():
     if args.start_date and args.end_date:
         # Historical mode
         output_id = f"{args.start_date}_{args.end_date}"
-        output_filename = f"openairframes_adsb_{args.start_date}_{args.end_date}.csv"
+        output_filename = f"openairframes_adsb_{args.start_date}_{args.end_date}.csv.gz"
         print(f"Combining chunks for date range: {args.start_date} to {args.end_date}")
     else:
         # Daily mode - use same date for start and end
@@ -187,7 +187,7 @@ def main():
         
         date_str = target_day.strftime("%Y-%m-%d")
         output_id = date_str
-        output_filename = f"openairframes_adsb_{date_str}_{date_str}.csv"
+        output_filename = f"openairframes_adsb_{date_str}_{date_str}.csv.gz"
         print(f"Combining chunks for {date_str}")
     
     chunks_dir = args.chunks_dir

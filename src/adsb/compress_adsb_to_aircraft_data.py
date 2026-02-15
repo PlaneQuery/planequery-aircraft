@@ -264,7 +264,7 @@ def get_latest_aircraft_adsb_csv_df():
         if df[col].dtype == pl.Utf8:
             df = df.with_columns(pl.col(col).fill_null(""))
     
-    # Extract start date from filename pattern: openairframes_adsb_{start_date}_{end_date}.csv
+    # Extract start date from filename pattern: openairframes_adsb_{start_date}_{end_date}.csv[.gz]
     match = re.search(r"openairframes_adsb_(\d{4}-\d{2}-\d{2})_", str(csv_path))
     if not match:
         raise ValueError(f"Could not extract date from filename: {csv_path.name}")

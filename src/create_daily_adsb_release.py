@@ -77,7 +77,7 @@ if __name__ == '__main__':
     OUT_ROOT = Path("data/openairframes")
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
 
-    output_file = OUT_ROOT / f"openairframes_adsb_{start_date_str}_{date_str}.csv"
+    output_file = OUT_ROOT / f"openairframes_adsb_{start_date_str}_{date_str}.csv.gz"
     df_combined.write_csv(output_file)
 
     print(f"Saved: {output_file}")
