@@ -47,6 +47,9 @@ def convert_faa_master_txt_to_df(zip_path: Path, date: str):
     
     # Convert all NaN to empty strings
     df = df.fillna("")
+    # The FAA parser can produce the literal string "None" for missing values;
+    # replace those so they match the empty-string convention used everywhere else.
+    df = df.replace("None", "")
     
     return df
 
@@ -84,8 +87,8 @@ def concat_faa_historical_df(df_base, df_new):
             # Convert to string
             val_str = str(val).strip()
             
-            # Handle empty strings
-            if val_str == "" or val_str == "nan":
+            # Handle empty strings and null-like literals
+            if val_str == "" or val_str == "nan" or val_str == "None":
                 return ""
             
             # Check if it looks like a list representation (starts with [ )
