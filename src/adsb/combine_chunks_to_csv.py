@@ -102,15 +102,16 @@ def download_and_merge_base_release(compressed_df: pl.DataFrame) -> tuple[pl.Dat
         if base_path and os.path.exists(str(base_path)):
             print(f"Loading base release from {base_path}")
             
+            # Extract start date from filename (e.g., openairframes_adsb_2025-05-01_2026-02-14.csv.gz)
+            import re
+            filename = os.path.basename(str(base_path))
+            match = re.search(r'openairframes_adsb_(\d{4}-\d{2}-\d{2})_', filename)
+            earliest_date = match.group(1) if match else None
+            print(f"Start date from base filename: {earliest_date}")
+            
             # Read CSV with schema matching the new data
             base_df = pl.read_csv(base_path, schema=compressed_df.schema)
             print(f"Base release has {len(base_df)} records")
-            
-            # Extract earliest date from base release
-            earliest_timestamp = base_df['time'].min()
-            earliest_dt = datetime.fromisoformat(str(earliest_timestamp).replace('Z', '+00:00'))
-            earliest_date = earliest_dt.strftime('%Y-%m-%d')
-            print(f"Earliest date in base release: {earliest_date}")
             
             # Ensure columns match
             base_cols = set(base_df.columns)
