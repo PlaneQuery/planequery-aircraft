@@ -85,7 +85,7 @@ def _fetch_releases_from_repo(year: str, version_date: str) -> list:
     
     while True:
         max_retries = 10
-        retry_delay = 60
+        retry_delay = 60*5
         
         for attempt in range(1, max_retries + 1):
             try:
