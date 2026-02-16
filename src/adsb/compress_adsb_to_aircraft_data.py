@@ -123,6 +123,10 @@ def compress_multi_icao_df(df: pl.DataFrame, verbose: bool = True) -> pl.DataFra
         # partition_by with as_dict=True returns tuple keys: (date, icao)
         date_val, icao = group_key
         compressed = compress_df_polars(group_df, str(icao))
+        # Set time to start of UTC day for consistent deduplication
+        compressed = compressed.with_columns(
+            pl.lit(date_val).cast(pl.Date).cast(pl.Datetime).alias('time')
+        )
         compressed_dfs.append(compressed)
     
     if compressed_dfs:
