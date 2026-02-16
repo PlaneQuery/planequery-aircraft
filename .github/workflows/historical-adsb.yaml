@@ -240,6 +240,7 @@ jobs:
   adsb-reduce:
     needs: [generate-matrix, adsb-map]
     runs-on: ubuntu-24.04-arm
+    timeout-minutes: 120
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -255,11 +256,23 @@ jobs:
           pip install -r requirements.txt
 
       - name: Download all chunk artifacts
+        id: download
         uses: actions/download-artifact@v4
         with:
           pattern: adsb-map-*
           path: data/output/adsb_chunks/
           merge-multiple: true
+        timeout-minutes: 60
+        continue-on-error: true
+
+      - name: Retry artifact download on failure
+        if: steps.download.outcome == 'failure'
+        uses: actions/download-artifact@v4
+        with:
+          pattern: adsb-map-*
+          path: data/output/adsb_chunks/
+          merge-multiple: true
+        timeout-minutes: 60
 
       - name: Debug downloaded files
         run: |
