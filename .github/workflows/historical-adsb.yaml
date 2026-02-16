@@ -257,22 +257,22 @@ jobs:
 
       - name: Download all chunk artifacts
         id: download
+        timeout-minutes: 60
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
           pattern: adsb-map-*
           path: data/output/adsb_chunks/
           merge-multiple: true
-        timeout-minutes: 60
-        continue-on-error: true
 
       - name: Retry artifact download on failure
         if: steps.download.outcome == 'failure'
+        timeout-minutes: 60
         uses: actions/download-artifact@v4
         with:
           pattern: adsb-map-*
           path: data/output/adsb_chunks/
           merge-multiple: true
-        timeout-minutes: 60
 
       - name: Debug downloaded files
         run: |
