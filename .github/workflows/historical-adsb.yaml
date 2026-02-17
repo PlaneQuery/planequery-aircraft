@@ -12,10 +12,10 @@ on:
         required: true
         type: string
       chunk_days:
-        description: 'Days per job chunk (default: 7)'
+        description: 'Days per job chunk (default: 1)'
         required: false
         type: number
-        default: 7
+        default: 1
 
 jobs:
   generate-matrix:

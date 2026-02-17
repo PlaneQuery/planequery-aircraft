@@ -41,7 +41,7 @@ def main() -> None:
     """Main entry point for GitHub Actions."""
     start_date = os.environ.get("INPUT_START_DATE")
     end_date = os.environ.get("INPUT_END_DATE")
-    chunk_days = int(os.environ.get("INPUT_CHUNK_DAYS", "7"))
+    chunk_days = int(os.environ.get("INPUT_CHUNK_DAYS", "1"))
     
     if not start_date or not end_date:
         print("ERROR: INPUT_START_DATE and INPUT_END_DATE must be set", file=sys.stderr)
