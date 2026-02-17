@@ -113,7 +113,7 @@ def process_single_day(target_day: datetime) -> tuple[str | None, list[str]]:
     extract_dir = download_and_extract(version_date)
     if not extract_dir:
         print(f"Failed to download/extract data for {date_str}")
-        return None, []
+        raise Exception(f"No data available for {date_str}")
     
     icaos = list_icao_folders(extract_dir)
     print(f"Found {len(icaos)} ICAOs for {date_str}")
