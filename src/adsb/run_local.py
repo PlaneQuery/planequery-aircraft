@@ -100,13 +100,16 @@ def main():
     print("=" * 60)
     
     # Process each date chunk
-    # Process each date chunk
     for idx, date_chunk in enumerate(date_chunks, 1):
         chunk_start = date_chunk['start']
         chunk_end = date_chunk['end']
         
+        # Convert exclusive end date to inclusive for subcommands
+        # download_and_list_icaos and process_icao_chunk treat both dates as inclusive
+        chunk_end_inclusive = (datetime.strptime(chunk_end, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+        
         print(f"\n{'=' * 60}")
-        print(f"Processing Date Chunk {idx}/{len(date_chunks)}: {chunk_start} to {chunk_end}")
+        print(f"Processing Date Chunk {idx}/{len(date_chunks)}: {chunk_start} to {chunk_end_inclusive} (inclusive)")
         print('=' * 60)
         
         # Step 1: Download and extract
@@ -115,7 +118,7 @@ def main():
         print("=" * 60)
         
         cmd = ["python", "-m", "src.adsb.download_and_list_icaos",
-               "--start-date", chunk_start, "--end-date", chunk_end]
+               "--start-date", chunk_start, "--end-date", chunk_end_inclusive]
         run_cmd(cmd, "Download and extract")
         
         # Step 2: Process chunks
@@ -129,7 +132,7 @@ def main():
                    "--chunk-id", str(chunk_id),
                    "--total-chunks", str(args.chunks),
                    "--start-date", chunk_start,
-                   "--end-date", chunk_end]
+                   "--end-date", chunk_end_inclusive]
             run_cmd(cmd, f"Process ICAO chunk {chunk_id}")
     
     # Step 3: Combine all chunks to CSV
