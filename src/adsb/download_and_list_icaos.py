@@ -23,11 +23,6 @@ from src.adsb.download_adsb_data_to_parquet import (
 )
 
 
-def get_target_day() -> datetime:
-    """Get yesterday's date (the day we're processing)."""
-    return datetime.utcnow() - timedelta(days=1)
-
-
 def download_and_extract(version_date: str) -> str | None:
     """Download and extract tar files, return extract directory path."""
     extract_dir = os.path.join(OUTPUT_DIR, f"{version_date}-planes-readsb-prod-0.tar_0")
@@ -104,21 +99,6 @@ def list_icao_folders(extract_dir: str) -> list[str]:
     return icaos
 
 
-def write_manifest(icaos: list[str], manifest_id: str) -> str:
-    """Write ICAO list to manifest file.
-    
-    Args:
-        icaos: List of ICAO codes
-        manifest_id: Identifier for manifest file (date or date range)
-    """
-    manifest_path = os.path.join(OUTPUT_DIR, f"icao_manifest_{manifest_id}.txt")
-    with open(manifest_path, "w") as f:
-        for icao in sorted(icaos):
-            f.write(f"{icao}\n")
-    print(f"Wrote manifest with {len(icaos)} ICAOs to {manifest_path}")
-    return manifest_path
-
-
 def process_single_day(target_day: datetime) -> tuple[str | None, list[str]]:
     """Process a single day: download, extract, list ICAOs.
     
@@ -159,12 +139,7 @@ def main():
     parser.add_argument("--date", type=str, help="Single date in YYYY-MM-DD format (default: yesterday)")
     args = parser.parse_args()
     
-    # Single day mode only
-    if args.date:
-        target_day = datetime.strptime(args.date, "%Y-%m-%d")
-    else:
-        target_day = get_target_day()
-    
+    target_day = datetime.strptime(args.date, "%Y-%m-%d")
     date_str = target_day.strftime("%Y-%m-%d")
     tar_output_dir = Path(f"./data/output/adsb_archives/{date_str}")
     
@@ -176,8 +151,6 @@ def main():
     if not icaos:
         print("No ICAOs found")
         sys.exit(1)
-    
-    write_manifest(icaos, date_str)
     
     print(f"\nDone! Extract dir: {extract_dir}")
     print(f"Total ICAOs: {len(icaos)}")
