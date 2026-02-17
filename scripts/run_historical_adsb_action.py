@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script to trigger historical-adsb workflow runs in 1-month chunks. Since github actions does not do well with downloading many artifacts for adsb-reduce
+Script to trigger historical-adsb workflow runs in 15-day chunks.
 
 Usage:
     python scripts/run_historical_adsb_action.py --start-date 2025-01-01 --end-date 2025-06-01
@@ -12,23 +12,8 @@ import sys
 from datetime import datetime, timedelta
 
 
-def add_months(date, months):
-    """Add months to a date, handling month/year overflow."""
-    month = date.month + months
-    year = date.year + month // 12
-    month = month % 12
-    if month == 0:
-        month = 12
-        year -= 1
-    
-    # Handle day overflow (e.g., Jan 31 + 1 month = Feb 28/29)
-    day = min(date.day, [31, 29 if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0) else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1])
-    
-    return date.replace(year=year, month=month, day=day)
-
-
-def generate_monthly_chunks(start_date_str, end_date_str):
-    """Generate monthly date ranges from start to end date."""
+def generate_date_chunks(start_date_str, end_date_str, chunk_days=15):
+    """Generate date ranges in fixed-day chunks from start to end date."""
     start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
     end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
     
@@ -36,8 +21,8 @@ def generate_monthly_chunks(start_date_str, end_date_str):
     current = start_date
     
     while current < end_date:
-        # Calculate end of current chunk (start of next month)
-        chunk_end = add_months(current, 1)
+        # Calculate end of current chunk
+        chunk_end = current + timedelta(days=chunk_days)
         
         # Don't go past the global end date
         if chunk_end > end_date:
@@ -96,8 +81,14 @@ def main():
     parser.add_argument(
         '--chunk-days',
         type=int,
-        default=7,
-        help='Days per job chunk within each workflow run (default: 7)'
+        default=3,
+        help='Days per job chunk within each workflow run (default: 3)'
+    )
+    parser.add_argument(
+        '--workflow-chunk-days',
+        type=int,
+        default=15,
+        help='Days per workflow run (default: 15)'
     )
     parser.add_argument(
         '--branch',
@@ -130,10 +121,10 @@ def main():
         print(f"Error: Invalid date format - {e}")
         sys.exit(1)
     
-    # Generate monthly chunks
-    chunks = generate_monthly_chunks(args.start_date, args.end_date)
+    # Generate date chunks
+    chunks = generate_date_chunks(args.start_date, args.end_date, chunk_days=args.workflow_chunk_days)
     
-    print(f"\nGenerating {len(chunks)} monthly workflow runs on branch '{args.branch}':")
+    print(f"\nGenerating {len(chunks)} workflow runs ({args.workflow_chunk_days} days each) on branch '{args.branch}':")
     for i, chunk in enumerate(chunks, 1):
         print(f"  {i}. {chunk['start']} to {chunk['end']}")
     
