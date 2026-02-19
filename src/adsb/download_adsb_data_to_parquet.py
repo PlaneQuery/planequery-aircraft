@@ -260,7 +260,6 @@ def extract_split_archive(file_paths: list, extract_dir: str) -> bool:
             stdin=cat_proc.stdout,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            check=True
         )
         cat_proc.stdout.close()
         cat_stderr = cat_proc.stderr.read().decode() if cat_proc.stderr else ""
@@ -268,6 +267,24 @@ def extract_split_archive(file_paths: list, extract_dir: str) -> bool:
         
         if cat_stderr:
             print(f"cat stderr: {cat_stderr}")
+        
+        tar_stderr = result.stderr.decode() if result.stderr else ""
+        if result.returncode != 0:
+            # GNU tar exits non-zero for format issues that BSD tar silently
+            # tolerates (e.g. trailing junk after the last valid entry).
+            # Check whether files were actually extracted before giving up.
+            extracted_items = os.listdir(extract_dir)
+            if extracted_items:
+                print(f"[WARN] tar exited {result.returncode} but extracted "
+                      f"{len(extracted_items)} items — treating as success")
+                if tar_stderr:
+                    print(f"tar stderr: {tar_stderr}")
+            else:
+                print(f"Failed to extract split archive (tar exit {result.returncode})")
+                if tar_stderr:
+                    print(f"tar stderr: {tar_stderr}")
+                shutil.rmtree(extract_dir, ignore_errors=True)
+                return False
         
         print(f"Successfully extracted archive to {extract_dir}")
         
@@ -285,11 +302,9 @@ def extract_split_archive(file_paths: list, extract_dir: str) -> bool:
         print(f"Disk space after tar deletion: {free_gb:.1f}GB free")
         
         return True
-    except subprocess.CalledProcessError as e:
-        stderr_output = e.stderr.decode() if e.stderr else ""
+    except Exception as e:
         print(f"Failed to extract split archive: {e}")
-        if stderr_output:
-            print(f"tar stderr: {stderr_output}")
+        shutil.rmtree(extract_dir, ignore_errors=True)
         return False
 
 
